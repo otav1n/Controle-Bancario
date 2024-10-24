@@ -8,8 +8,10 @@
             "args": [
                 "-g",
                 "C:/Users/otavi/Desktop/bc_1.0/src/main.c",
-                "C:/Users/otavi/Desktop/bc_1.0/src/funcoes.c",
+                "C:/Users/otavi/Desktop/bc_1.0/src/tela_padrao.c",
                 "C:/Users/otavi/Desktop/bc_1.0/src/submenu_cadastros.c",
+                "C:/Users/otavi/Desktop/bc_1.0/src/remover_contas.c",
+                "C:/Users/otavi/Desktop/bc_1.0/src/incluir_contas.c",
                 "-o",
                 "C:/Users/otavi/Desktop/bc_1.0/output/bancario"
             ],

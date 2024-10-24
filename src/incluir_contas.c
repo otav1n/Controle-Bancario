@@ -1,7 +1,7 @@
 /*
     Autor: Otávio Augusto Zangelmi Costa
-    Data: 23/10/2024
-    Objetivo:
+    Data: 24/10/2024
+    Objetivo: Menu de Incluir contas
 */
 
 // Impotando as bibliotecas
@@ -13,7 +13,7 @@
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
-void submenu_cadastros() // função para tela de submenu do cadastro de contas
+void incluir_contas()
 {
 
     int msg;
@@ -24,37 +24,28 @@ void submenu_cadastros() // função para tela de submenu do cadastro de contas
     {
         tela();
         gotoxy(35, 06);
-        printf("MENU CONTAS");
-        gotoxy(31, 10);
-        printf("1 - Incluir Conta");
-        gotoxy(31, 12);
-        printf("2 - Alterar Conta");
-        gotoxy(31, 14);
-        printf("3 - Consultar Conta");
-        gotoxy(31, 16);
-        printf("4 - Remover Conta");
-        gotoxy(31, 18);
-        printf("5 - Voltar");
+        printf("MENU INCLUIR");
+        gotoxy(28, 10);
+        printf("1 - Inserir conta no Inicio");
+        gotoxy(28, 12);
+        printf("2 - Inserir conta no Final");
+        gotoxy(28, 14);
+        printf("3 - Inserir conta em Posicao");
+        gotoxy(28, 16);
+        printf("4 - Voltar");
         gotoxy(6, 23);
         scanf("%d", &msg);
 
-        // Switch para Opções
-        switch (msg)
+        switch (msg) // switch para incluir contas
         {
         case 1:
-            incluir_contas();
             break;
         case 2:
-
             break;
         case 3:
-
             break;
         case 4:
-            remover_contas();
-            break;
-        case 5:
-            main();
+            submenu_cadastros();
             break;
         default:
             gotoxy(6, 23);
@@ -62,6 +53,5 @@ void submenu_cadastros() // função para tela de submenu do cadastro de contas
             getch();
             break;
         }
-
-    } while (msg != 5);
+    } while (msg != 4);
 }

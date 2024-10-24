@@ -20,17 +20,19 @@ int main()
         int opc;
         system("color 3F");
 
+        system("cls"); // limpa tela
+
         do
         {
 
                 tela();
-                gotoxy(35, 06);
+                gotoxy(33, 06);
                 printf("MENU PRINCIPAL");
-                gotoxy(31, 10);
+                gotoxy(29, 10);
                 printf("1 - Contas Bancarias");
-                gotoxy(31, 12);
+                gotoxy(29, 12);
                 printf("2 - Movimentacao Bancaria");
-                gotoxy(31, 14);
+                gotoxy(29, 14);
                 printf("3 - Sair do Programa");
                 gotoxy(6, 23);
                 scanf("%d", &opc);
@@ -38,11 +40,16 @@ int main()
                 switch (opc)
                 {
                 case 1:
-
                         submenu_cadastros();
                         break;
+                case 2:
+                        break;
+                case 3:
+                        break;
                 default:
-
+                        gotoxy(6, 23);
+                        printf("Opcao invalida. Tente novamente.");
+                        getch();
                         break;
                 }
         } while (opc != 3);

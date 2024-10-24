@@ -12,4 +12,10 @@ void tela();
 
 void submenu_cadastros();
 
+void incluir_contas();
+
+void remover_contas();
+
+int main();
+
 #endif

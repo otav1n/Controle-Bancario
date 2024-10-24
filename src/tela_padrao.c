@@ -4,13 +4,14 @@
     OB: Tela Padrão do Sistema bancario
 */
 
+// Impotando as bibliotecas
 #include <stdio.h>
-#include <windows.h>
 #include <stdlib.h>
+#include <windows.h>
 #include <string.h>
 #include <conio.h>
 
-#include "funcoes.h"
+#include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
 // Função para posionar o cursor
 void gotoxy(int x, int y)
@@ -30,7 +31,7 @@ void tela()
     int col;
 
     system("cls"); // limpa a tela
-    system("cls"); // limpa a tela
+
 
     for (lin = 1; lin < 25; lin++)
     {
@@ -82,12 +83,12 @@ void tela()
     gotoxy(63, 02);
     printf("ESTRURA DE DADOS");
 
-    gotoxy(69, 03);
-    printf("BankWise");
+    gotoxy(73, 03);
+    printf("Nobank");
 
     gotoxy(02, 23);
     printf("MSG: ");
 
     gotoxy(02, 03);
-    printf("SISTEMA DE CONTROLE BANCARIO");
+    printf("CONTROLE BANCARIO");
 }
