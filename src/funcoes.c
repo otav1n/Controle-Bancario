@@ -28,7 +28,7 @@ void tela()
     int lin;
     int col;
 
-    system("cls"); // limpar a tela
+    system("cls"); 
     system("cls"); // limpa a tela
 
     for (lin = 1; lin < 25; lin++)
