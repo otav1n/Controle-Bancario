@@ -7,8 +7,9 @@
 #include <stdio.h>
 #include <windows.h>
 #include <stdlib.h>
-#include <locale.h>
 #include <string.h>
+#include <conio.h>
+
 #include "funcoes.h"
 
 // Função para posionar o cursor

@@ -1,39 +1,39 @@
 {
-    "version": "2.0.0",
-    "tasks": [
+  "version": "2.0.0",
+  "tasks": [
       {
-        "label": "Compilar e Executar C",
-        "type": "shell",
-        "command": "gcc",
-        "args": [
-          "-g",
-          "${workspaceFolder}/**/*.c",
-          "-o",
-          "${workspaceFolder}/output/bc_1.0"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": [
-          "$gcc"
-        ],
-        "detail": "Tarefa gerada pelo usuário."
+          "label": "Compilar e Executar C",
+          "type": "shell",
+          "command": "gcc",
+          "args": [
+              "-g",
+              "C:\\Users\\otavi\\Desktop\\bc_1.0\\src\\main.c",
+              "-o",
+              "C:\\Users\\otavi\\Desktop\\bc_1.0\\output\\bancario"
+          ],
+          "group": {
+              "kind": "build",
+              "isDefault": true
+          },
+          "problemMatcher": [
+              "$gcc"
+          ],
+          "detail": "Tarefa gerada pelo usuário."
       },
       {
-        "label": "Executar Programa",
-        "type": "shell",
-        "command": "${workspaceFolder}/output/bc_1.0",
-        "group": {
-          "kind": "test",
-          "isDefault": true
-        },
-        "presentation": {
-          "echo": true,
-          "reveal": "always",
-          "focus": false,
-          "panel": "shared"
-        }
+          "label": "Executar Programa",
+          "type": "shell",
+          "command": "C:\\Users\\otavi\\Desktop\\bc_1.0\\output\\bancario",
+          "group": {
+              "kind": "test",
+              "isDefault": true
+          },
+          "presentation": {
+              "echo": true,
+              "reveal": "always",
+              "focus": false,
+              "panel": "shared"
+          }
       }
-    ]
-  }
+  ]
+}

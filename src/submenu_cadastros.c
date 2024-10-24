@@ -8,13 +8,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <windows.h>
-#include <locale.h>
 #include <string.h>
 #include <conio.h>
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
-void submenu_cadastros() // Função para switch case do menu de Contas
+void submenu_cadastros() // função para tela de submenu do cadastro de contas
 {
 
     int msg;
