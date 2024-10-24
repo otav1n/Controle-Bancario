@@ -40,7 +40,7 @@ int main()
                 {
                 case 1:
 
-                        menu_contas();
+                        submenu_cadastros();
                         break;
                 default:
 

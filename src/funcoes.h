@@ -10,6 +10,6 @@ void gotoxy(int x, int y);
 
 void tela();
 
-void menu_contas();
+void submenu_cadastros();
 
 #endif
