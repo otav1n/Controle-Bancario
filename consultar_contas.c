@@ -13,7 +13,7 @@
 
 #include "funcoes.h" // Onde está armazenada nossa estrutura de dados
 
-void cadastro_conta(TipoLista *L) {
+void consultar_conta(TipoLista *L) {
 
     reg_conta reg_c; // Transforma a classe em objeto
 

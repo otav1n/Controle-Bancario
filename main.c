@@ -18,7 +18,7 @@ int main()
 {
 
         int opc;
-        system("color 3F");
+        system("color 5F");
 
         system("cls"); // limpa tela
 
