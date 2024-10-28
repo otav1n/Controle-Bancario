@@ -45,10 +45,10 @@ void submenu_cadastros() // função para tela de submenu do cadastro de contas
             incluir_contas();
             break;
         case 2:
-
+            cadastro_conta(&L);
             break;
         case 3:
-
+            consultar_conta(&L);
             break;
         case 4:
             remover_contas();

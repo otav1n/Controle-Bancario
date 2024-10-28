@@ -39,10 +39,13 @@ void incluir_contas()
         switch (msg) // switch para incluir contas
         {
         case 1:
+            cadastro_conta(&L);
             break;
         case 2:
+            cadastro_conta(&L);
             break;
         case 3:
+            cadastro_conta(&L);
             break;
         case 4:
             submenu_cadastros();
