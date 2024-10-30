@@ -17,6 +17,11 @@
 int main()
 {
 
+        TipoLista L = {NULL, NULL};
+
+        // Carregar dados do arquivo ao iniciar
+        carregarArquivo(&L);
+
         int opc;
         system("color 5F");
 
@@ -53,6 +58,17 @@ int main()
                         break;
                 }
         } while (opc != 3);
+
+        // Salvar dados antes de encerrar
+        salvarArquivo(&L);
+
+        // Liberar memória da lista
+        while (L.Primeiro != NULL)
+        {
+                ContaBancaria temp = L.Primeiro;
+                L.Primeiro = L.Primeiro->proximo;
+                free(temp);
+        }
 
         return 0;
 }

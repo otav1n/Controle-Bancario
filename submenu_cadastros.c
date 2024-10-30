@@ -1,7 +1,7 @@
 /*
     Autor: Otávio Augusto Zangelmi Costa
     Data: 23/10/2024
-    Objetivo:
+    Objetivo: construir submenu das contas
 */
 
 // Impotando as bibliotecas

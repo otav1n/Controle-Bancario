@@ -54,6 +54,10 @@ void cadastro_conta(TipoLista *L);
 
 void consultar_conta(TipoLista *L);
 
+void carregarArquivo(TipoLista *L);
+
+void salvarArquivo(TipoLista *L);
+
 TipoLista L;
 
 int main();
