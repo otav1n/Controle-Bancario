@@ -19,9 +19,6 @@ int main()
 
         TipoLista L = {NULL, NULL};
 
-        // Carregar dados do arquivo ao iniciar
-        carregarArquivo(&L);
-
         int opc;
         system("color 5F");
 

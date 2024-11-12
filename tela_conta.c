@@ -32,7 +32,7 @@ void tela_contas()
         printf("4. TIPO DA CONTA................: ");
 
         gotoxy(8, 14);
-        printf("5. SALDO DA CONTA...............: "); //NÃO VERIFIQUEI SE É SALDO DA CONTA MESMO
+        printf("5. SALDO DA CONTA...............: "); 
 
         gotoxy(8, 16);
         printf("6. SALDO LIMITE.................: ");

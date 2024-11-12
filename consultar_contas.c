@@ -29,9 +29,6 @@ void consultar_conta(TipoLista *L) {
         fflush(stdin);
         fgets(reg_c.banco, 50, stdin);
 
-        /*gotoxy(43, 10);
-        scanf("%d", &reg_c.codigo)*/
-
         gotoxy(43, 8);
         fflush(stdin);
         fgets(reg_c.agencia, 10, stdin);

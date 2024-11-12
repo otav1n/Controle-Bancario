@@ -1,5 +1,5 @@
 /*
-    Autor: Matheus e Otavio
+    Autor: Matheus Bezerra Domingos.
     Data: 25/10/2024
     Objetivo: Menu para cadastrar conta
 */

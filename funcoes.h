@@ -24,18 +24,18 @@ typedef struct{
     double vl_limite;
     char status[10];
 
-}reg_conta; //registro de contas
+}reg_conta; //estrutura que armazena os dados de uma conta
 
-typedef struct prox *ContaBancaria; //definição do prox -> ponteiro, para proxima conta
+typedef struct prox *ContaBancaria; // prox estrutura que representa um nó da lista, Conta Bancaria um tipo de ponteiro que aponta para prox
 
-typedef struct prox{ //tipo d. conta
-    reg_conta conteudo; //ai só coloco conteudo.oque eu quero
-    ContaBancaria proximo; //para o proximo
+typedef struct prox{ 
+    reg_conta conteudo; // Dados da conta
+    ContaBancaria proximo; // Ponteiro para o próximo item da lista
 }prox;
 
-typedef struct{ //tipo lista
-    ContaBancaria Primeiro; //primeiro da lista 
-    ContaBancaria Ultimo; //ultimo da lista
+typedef struct{ 
+    ContaBancaria Primeiro; // Ponteiro para o primeiro item da lista
+    ContaBancaria Ultimo; // Ponteiro para o último item da lista
 }TipoLista;
 
 void gotoxy(int x, int y);
@@ -54,9 +54,9 @@ void cadastro_conta(TipoLista *L);
 
 void consultar_conta(TipoLista *L);
 
-void carregarArquivo(TipoLista *L);
-
 void salvarArquivo(TipoLista *L);
+
+void cadastrarInicio(TipoLista *L);
 
 TipoLista L;
 
