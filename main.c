@@ -1,15 +1,9 @@
-/*
-    Autor: Matheus Bezerra Domingos.
-    Data: 23/10/2024
-    Objetivo: Menu Principal do controle bancario
+/* Autor......: Matheus Bezerra e Otávio Augusto
+   Data.......: 23/10/2024
+   Equipe.....: 159752-2023 - Otávio Augusto
+                166479-2024 - Matheus Bezerra
+   Objetivo...: Programa Principal
 */
-
-// Impotando as bibliotecas
-#include <stdio.h>
-#include <stdlib.h>
-#include <windows.h>
-#include <string.h>
-#include <conio.h>
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
@@ -20,7 +14,7 @@ int main()
         TipoLista L = {NULL, NULL};
 
         int opc;
-        system("color 5F");
+        system("color 0A");
 
         system("cls"); // limpa tela
 
@@ -42,7 +36,7 @@ int main()
                 switch (opc)
                 {
                 case 1:
-                        submenu_cadastros();
+                        menu_contas();
                         break;
                 case 2:
                         break;
@@ -57,7 +51,7 @@ int main()
         } while (opc != 3);
 
         // Salvar dados antes de encerrar
-        salvarArquivo(&L);
+        salvar_Arquivo(&L);
 
         // Liberar memória da lista
         while (L.Primeiro != NULL)

@@ -1,65 +1,13 @@
-/*
-    Autor: Otávio Augusto Zangelmi Costa
-    Data: 24/10/2024
-    Objetivo: Menu de Incluir contas
+/* Autor......: Otávio Augusto
+   Data.......: 12/11/2024
+   Equipe.....: 159752-2023 - Otávio Augusto
+                166479-2024 - Matheus Bezerra
+   Objetivo...: Criar a tela de Menu de Contas
 */
-
-// Impotando as bibliotecas
-#include <stdio.h>
-#include <stdlib.h>
-#include <windows.h>
-#include <string.h>
-#include <conio.h>
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
-void incluir_contas()
-{
-
-    int msg;
-
-    system("cls"); // limpa tela
-
-    do
-    {
-        tela();
-        gotoxy(35, 06);
-        printf("MENU INCLUIR");
-        gotoxy(28, 10);
-        printf("1 - Inserir conta no Inicio");
-        gotoxy(28, 12);
-        printf("2 - Inserir conta no Final");
-        gotoxy(28, 14);
-        printf("3 - Inserir conta em Posicao");
-        gotoxy(28, 16);
-        printf("4 - Voltar");
-        gotoxy(6, 23);
-        scanf("%d", &msg);
-
-        switch (msg) // switch para incluir contas
-        {
-        case 1:
-            cadastrarInicio(&L);
-            break;
-        case 2:
-            cadastro_conta(&L);
-            break;
-        case 3:
-            cadastro_conta(&L);
-            break;
-        case 4:
-            submenu_cadastros();
-            break;
-        default:
-            gotoxy(6, 23);
-            printf("Opcao invalida. Tente novamente.");
-            getch();
-            break;
-        }
-    } while (msg != 4);
-}
-
-void cadastrarInicio(TipoLista *L)
+void cadastrar_Inicio(TipoLista *L)
 {
 
     // declarando variaveis
@@ -73,37 +21,40 @@ void cadastrarInicio(TipoLista *L)
         tela();
         tela_contas();
 
+        gotoxy(54, 03);
+        printf("INSERINDO CONTA NO INICIO");
+
         // SCANFS PARA LEITURA DOS DADOS
 
-        gotoxy(43, 6);
+        gotoxy(31, 6);
+        scanf("%d", &reg_c.codigo);
+        getchar(); // Limpa o buffer após a leitura da resposta
+
+        gotoxy(31, 8);
         fflush(stdin);
         fgets(reg_c.banco, 50, stdin);
 
-        gotoxy(43, 8);
+        gotoxy(31, 10);
         fflush(stdin);
         fgets(reg_c.agencia, 10, stdin);
 
-        gotoxy(43, 10);
+        gotoxy(31, 12);
         fflush(stdin);
         fgets(reg_c.numero_conta, 20, stdin);
 
-        gotoxy(43, 12);
+        gotoxy(31, 14);
         fflush(stdin);
         fgets(reg_c.tipo_conta, 20, stdin);
 
-        gotoxy(43, 14);
+        gotoxy(31, 16);
         scanf("%lf", &reg_c.vl_saldo);
 
-        gotoxy(43, 16);
+        gotoxy(31, 18);
         scanf("%lf", &reg_c.vl_limite);
 
-        gotoxy(43, 18);
+        gotoxy(31, 20);
         fflush(stdin);
         fgets(reg_c.status, 10, stdin);
-
-        gotoxy(43, 20);
-        scanf("%d", &reg_c.codigo);
-        getchar(); // Limpa o buffer após a leitura da resposta
 
         gotoxy(6, 23);
         printf("                                             ");
@@ -138,7 +89,7 @@ void cadastrarInicio(TipoLista *L)
             gotoxy(7, 23);
             printf("Cadastrado com sucesso");
 
-            salvarArquivo(L);
+            salvar_Arquivo(L);
         }
         gotoxy(6, 23);
         printf("                                             ");

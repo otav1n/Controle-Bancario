@@ -1,15 +1,9 @@
-/*
-    Autor: Matheus e Otávio
-    Data: 23/10/2024
-    OB: Tela Padrão do Sistema bancario
+/* Autor......: Matheus Bezerra
+   Data.......: 23/10/2024
+   Equipe.....: 159752-2023 - Otávio Augusto
+                166479-2024 - Matheus Bezerra
+   Objetivo...: Tela Padrão do Sistema
 */
-
-// Impotando as bibliotecas
-#include <stdio.h>
-#include <stdlib.h>
-#include <windows.h>
-#include <string.h>
-#include <conio.h>
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
@@ -31,7 +25,6 @@ void tela()
     int col;
 
     system("cls"); // limpa a tela
-
 
     for (lin = 1; lin < 25; lin++)
     {
@@ -80,15 +73,12 @@ void tela()
     gotoxy(02, 02);
     printf("UNICV");
 
-    gotoxy(63, 02);
-    printf("ESTRURA DE DADOS");
-
-    gotoxy(73, 03);
-    printf("Nobank");
+    gotoxy(61, 02);
+    printf("ESTRUTURA DE DADOS");
 
     gotoxy(02, 23);
     printf("MSG: ");
 
     gotoxy(02, 03);
-    printf("CONTROLE BANCARIO");
+    printf("SISTEMA DE CONTROLE BANCARIO");
 }
