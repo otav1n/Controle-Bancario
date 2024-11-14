@@ -10,7 +10,7 @@
 // Salvar contas no arquivo
 void salvar_Arquivo(TipoLista *L)
 {
-    FILE *arq = fopen("folha.dat", "wb"); // Abre o arquivo 
+    FILE *arq = fopen("folha.dat", "wb"); // Abre o arquivo
     if (arq == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");

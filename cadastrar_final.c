@@ -12,7 +12,7 @@ void cadastrar_Final(TipoLista *L)
 
     reg_conta reg_c; // conteudo das contas
     ContaBancaria p;
-    int resp;    
+    int resp;
 
     do
     {
@@ -73,25 +73,25 @@ void cadastrar_Final(TipoLista *L)
                 getch();
                 return;
             }
-        p->conteudo = reg_c;
-        p->proximo =  L->Ultimo;
-        L->Ultimo = p;
 
-        if( L->Primeiro == NULL)
-        {
-            L->Primeiro = p;
-            L->Ultimo = p;
-        }
-        else
-        {
-            L->Ultimo->proximo = p;
-            L->Ultimo = p;
-        }
+            p->conteudo = reg_c;
+            p->proximo = NULL;
+
+            if (L->Primeiro == NULL) // Se a lista estiver vazia
+            {
+                L->Primeiro = p;
+                L->Ultimo = p;
+            }
+            else // se tiver elementos na lista
+            {
+                L->Ultimo->proximo = p;
+                L->Ultimo = p;
+            }
+
             gotoxy(7, 23);
             printf("                                             ");
             gotoxy(7, 23);
             printf("Cadastrado com sucesso");
-
         }
         gotoxy(6, 23);
         printf("                                             ");

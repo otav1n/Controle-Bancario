@@ -89,7 +89,6 @@ void cadastrar_Inicio(TipoLista *L)
             printf("                                             ");
             gotoxy(7, 23);
             printf("Cadastrado com sucesso");
-
         }
         gotoxy(6, 23);
         printf("                                             ");

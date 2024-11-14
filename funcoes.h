@@ -48,19 +48,21 @@ typedef struct
 
 void gotoxy(int x, int y);
 
-void tela();  // Função que constroi a tela padrão
+void tela(); // Função que constroi a tela padrão
 
 void tela_contas(); // Função sobre as Perguntas das Contas
 
-void consultar_conta(TipoLista *L);  // Função para Consultar Contas Cadastradas
+void consultar_conta(TipoLista *L); // Função para Consultar Contas Cadastradas
 
-void salvar_Arquivo(TipoLista *L);   // Função para salvar as movimentações e contas no disco
+void salvar_Arquivo(TipoLista *L); // Função para salvar as movimentações e contas no disco
 
-void cadastrar_Inicio(TipoLista *L);  // Função para Cadastrar conta no Inicio da Lista
+void cadastrar_Inicio(TipoLista *L); // Função para Cadastrar conta no Inicio da Lista
 
 void cadastrar_Final(TipoLista *L); // Função para cadastrar no final da lista
 
 void menu_contas(); // Tela de Menu da Contas
+
+void cadastrar_Posicao(TipoLista *L); // Função para Cadastrar em posição na lista
 
 TipoLista L;
 

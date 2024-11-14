@@ -52,6 +52,7 @@ void menu_contas()
             cadastrar_Final(&L);
             break;
         case 3:
+            cadastrar_Posicao(&L);
             break;
         case 4:
             break;
@@ -73,5 +74,4 @@ void menu_contas()
             break;
         }
     } while (opc != 9);
-    
 }
