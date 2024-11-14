@@ -1,28 +1,26 @@
 /* Autor......: Otávio Augusto
-   Data.......: 12/11/2024
+   Data.......: 13/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Função para Cadastrar conta no Inicio da Lista
+   Objetivo...: Função para cadastrar no final da lista
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
-void cadastrar_Inicio(TipoLista *L)
+void cadastrar_Final(TipoLista *L)
 {
-
-    // declarando variaveis
 
     reg_conta reg_c; // conteudo das contas
     ContaBancaria p;
-    int resp;
+    int resp;    
 
     do
     {
         tela();
         tela_contas();
 
-        gotoxy(54, 03);
-        printf("INSERINDO CONTA NO INICIO");
+        gotoxy(55, 03);
+        printf("INSERINDO CONTA NO FINAL");
 
         // SCANFS PARA LEITURA DOS DADOS
 
@@ -75,16 +73,20 @@ void cadastrar_Inicio(TipoLista *L)
                 getch();
                 return;
             }
+        p->conteudo = reg_c;
+        p->proximo =  L->Ultimo;
+        L->Ultimo = p;
 
-            p->conteudo = reg_c;
-            p->proximo = L->Primeiro;
+        if( L->Primeiro == NULL)
+        {
             L->Primeiro = p;
-
-            if (L->Ultimo == NULL)
-            {
-                L->Ultimo = p;
-            }
-
+            L->Ultimo = p;
+        }
+        else
+        {
+            L->Ultimo->proximo = p;
+            L->Ultimo = p;
+        }
             gotoxy(7, 23);
             printf("                                             ");
             gotoxy(7, 23);

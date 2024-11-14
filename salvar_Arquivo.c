@@ -10,19 +10,22 @@
 // Salvar contas no arquivo
 void salvar_Arquivo(TipoLista *L)
 {
-    FILE *arq = fopen("folha.dat", "wb");
+    FILE *arq = fopen("folha.dat", "wb"); // Abre o arquivo 
     if (arq == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");
         return;
     }
 
+    // Ponteiro auxiliar para percorrer a lista
     ContaBancaria aux = L->Primeiro;
+
+    // Percorre a lista e grava cada nó no arquivo binário
     while (aux != NULL)
     {
-        fwrite(&aux->conteudo, sizeof(reg_conta), 1, arq);
-        aux = aux->proximo;
+        fwrite(&aux->conteudo, sizeof(reg_conta), 1, arq); // Grava os dados da conta
+        aux = aux->proximo;                                // Avança para o próximo nó
     }
 
-    fclose(arq);
+    fclose(arq); // Fecha o arquivo após gravação
 }

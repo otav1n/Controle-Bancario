@@ -11,9 +11,10 @@
                 "C:/Users/otavi/Desktop/bc_1.0/tela_padrao.c",
                 "C:/Users/otavi/Desktop/bc_1.0/tela_conta.c",
                 "C:/Users/otavi/Desktop/bc_1.0/consultar_contas.c",
-                "C:/Users/otavi/Desktop/bc_1.0/alocar_disco.c",
+                "C:/Users/otavi/Desktop/bc_1.0/salvar_Arquivo.c",
                 "C:/Users/otavi/Desktop/bc_1.0/menu_contas.c",
                 "C:/Users/otavi/Desktop/bc_1.0/cadastrar_inicio.c",
+                "C:/Users/otavi/Desktop/bc_1.0/cadastrar_final.c",
                 "-o",
                 "C:/Users/otavi/Desktop/bc_1.0/output/bancario"
             ],
