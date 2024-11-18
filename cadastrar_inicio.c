@@ -2,7 +2,8 @@
    Data.......: 12/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Função para Cadastrar conta no Inicio da Lista
+   Objetivo...: Fazer uma Função para Cadastrar conta no Inicio da Lista
+   Subfunção..: Função que Cadastrar no inicio da lista
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
@@ -30,6 +31,18 @@ void cadastrar_Inicio(TipoLista *L)
         scanf("%d", &reg_c.codigo);
         getchar(); // Limpa o buffer após a leitura da resposta
 
+         //Verificação o código já foi digitado
+        while(codigoExiste(L, reg_c.codigo)){
+            gotoxy(7,23);
+            printf("Codigo ja existe!, Digite um novo codigo: ");
+            gotoxy(31,6);
+            printf("  ");
+            gotoxy(31,6);
+            scanf("%d", &reg_c.codigo);
+        }
+
+        gotoxy(7,23);
+        printf("                                              ");
         gotoxy(31, 8);
         fflush(stdin);
         fgets(reg_c.banco, 50, stdin);
@@ -41,7 +54,7 @@ void cadastrar_Inicio(TipoLista *L)
         gotoxy(31, 12);
         fflush(stdin);
         fgets(reg_c.numero_conta, 20, stdin);
-
+    
         gotoxy(31, 14);
         fflush(stdin);
         fgets(reg_c.tipo_conta, 20, stdin);
@@ -87,11 +100,15 @@ void cadastrar_Inicio(TipoLista *L)
 
             gotoxy(7, 23);
             printf("                                             ");
-            gotoxy(7, 23);
-            printf("Cadastrado com sucesso");
+            gotoxy(6, 23);
+            printf("                                             ");
+            gotoxy(6, 23);
+            printf("Cadastrado com sucesso ");
+            getch();
         }
-        gotoxy(6, 23);
-        printf("                                             ");
+
+        gotoxy(7, 23);
+        printf("                                                 ");
         gotoxy(6, 23);
         printf("Cadastrar novo funcionario (1.Sim / 2.Nao): ");
         scanf("%d", &resp);

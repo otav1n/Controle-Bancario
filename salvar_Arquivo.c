@@ -2,7 +2,8 @@
    Data.......: 12/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Função para salvar as movimentações e contas no disco
+   Objetivo...: Fazer salvar as Contas no disco
+   Subfunção..: Função que salva os Arquivos no disco
 */
 
 #include "funcoes.h" // Onde está armazenada nossa estrutura de dados

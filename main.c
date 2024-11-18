@@ -2,7 +2,8 @@
    Data.......: 23/10/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Programa Principal
+   Objetivo...: Fazer o Programa Principal
+   Subfunção..: Programa principal
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
@@ -10,12 +11,10 @@
 // Programa Principal
 int main()
 {
-
+        carregarContas(&L);
         TipoLista L = {NULL, NULL};
-
         int opc;
         system("color 0A");
-
         system("cls"); // limpa tela
 
         do
@@ -49,9 +48,6 @@ int main()
                         break;
                 }
         } while (opc != 3);
-
-        // Salvar dados antes de encerrar
-        salvar_Arquivo(&L);
 
         // Liberar memória da lista
         while (L.Primeiro != NULL)

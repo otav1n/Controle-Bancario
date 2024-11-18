@@ -2,7 +2,8 @@
    Data.......: 14/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Função para Cadastrar em posição na lista
+   Objetivo...: Fazer uma Função para Cadastrar em posição na lista
+   Subfunção..: Função que Cadastrar em posição na lista
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
@@ -71,39 +72,55 @@ void cadastrar_Posicao(TipoLista *L)
     tela();        // chama tela de novo
     tela_contas(); // chama a tela de cadastro
 
-    // Leitura dos dados da conta
-    gotoxy(31, 6);
-    scanf("%d", &reg_c.codigo);
-    getchar(); // Limpa o buffer
+   // SCANFS PARA LEITURA DOS DADOS
 
-    gotoxy(31, 8);
-    fgets(reg_c.banco, 50, stdin);
+        gotoxy(31, 6);
+        scanf("%d", &reg_c.codigo);
+        getchar(); // Limpa o buffer após a leitura da resposta
 
-    gotoxy(31, 10);
-    fgets(reg_c.agencia, 10, stdin);
+         //Verificação o código já foi digitado
+        while(codigoExiste(L, reg_c.codigo)){
+            gotoxy(7,23);
+            printf("Codigo ja existe!, Digite um novo codigo: ");
+            gotoxy(31,6);
+            printf("  ");
+            gotoxy(31,6);
+            scanf("%d", &reg_c.codigo);
+        }
 
-    gotoxy(31, 12);
-    fgets(reg_c.numero_conta, 20, stdin);
+        gotoxy(7,23);
+        printf("                                              ");
+        gotoxy(31, 8);
+        fflush(stdin);
+        fgets(reg_c.banco, 50, stdin);
 
-    gotoxy(31, 14);
-    fgets(reg_c.tipo_conta, 20, stdin);
+        gotoxy(31, 10);
+        fflush(stdin);
+        fgets(reg_c.agencia, 10, stdin);
 
-    gotoxy(31, 16);
-    scanf("%lf", &reg_c.vl_saldo);
+        gotoxy(31, 12);
+        fflush(stdin);
+        fgets(reg_c.numero_conta, 20, stdin);
+    
+        gotoxy(31, 14);
+        fflush(stdin);
+        fgets(reg_c.tipo_conta, 20, stdin);
 
-    gotoxy(31, 18);
-    scanf("%lf", &reg_c.vl_limite);
-    getchar(); // Limpa o buffer
+        gotoxy(31, 16);
+        scanf("%lf", &reg_c.vl_saldo);
 
-    gotoxy(31, 20);
-    fgets(reg_c.status, 10, stdin);
+        gotoxy(31, 18);
+        scanf("%lf", &reg_c.vl_limite);
 
-    // Pergunta se deseja gravar os dados
-    gotoxy(6, 23);
-    printf("                                             ");
-    gotoxy(6, 23);
-    printf("Deseja Gravar os Dados (1.Sim / 2.Nao) ");
-    scanf("%d", &resp);
+        gotoxy(31, 20);
+        fflush(stdin);
+        fgets(reg_c.status, 10, stdin);
+
+        gotoxy(6, 23);
+        printf("                                             ");
+        gotoxy(6, 23);
+        printf("Deseja Gravar os Dados (1.Sim / 2.Nao) ");
+        scanf("%d", &resp);
 
     // Se o usuario deseja gravar
     if (resp == 1)

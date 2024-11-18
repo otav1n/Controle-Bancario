@@ -2,7 +2,8 @@
    Data.......: 23/10/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Tela Padrão do Sistema
+   Objetivo...: Fazer a tela Padrão do Sistema
+   Subfunção..: Posiciona o cursor em um determinado ponto da Tela
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados

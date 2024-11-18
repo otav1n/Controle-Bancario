@@ -2,14 +2,14 @@
    Data.......: 13/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Tela de Menu da Contas
+   Objetivo...: Fazer a Tela de Menu da Contas
+   Subfunção..: Função que mostra a tela de Menu de Contas
 */
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
 void menu_contas()
 {
-
     int opc;
     system("color 0A");
 
@@ -73,5 +73,6 @@ void menu_contas()
             getch();
             break;
         }
+        salvar_Arquivo(&L); // Salvar contas no arquivo ao sair
     } while (opc != 9);
 }
