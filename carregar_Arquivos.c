@@ -1,4 +1,4 @@
-/* Autor......: Otávio Augusto
+/* Autor......: Matheus Bezerra
    Data.......: 13/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
