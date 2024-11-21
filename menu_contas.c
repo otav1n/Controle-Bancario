@@ -57,6 +57,7 @@ void menu_contas()
         case 4:
             break;
         case 5:
+            remover_final(&L);
             break;
         case 6:
             break;

@@ -69,6 +69,7 @@ void cadastrar_Posicao(TipoLista *L); // Função para Cadastrar em posição na
 
 int codigoExiste(TipoLista *L, int codigo); //Função verificador do código já existente
 
+void remover_final(TipoLista *L); // Função para remover conta no final da lista
 
 
 TipoLista L;

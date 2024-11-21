@@ -142,10 +142,6 @@ void cadastrar_Posicao(TipoLista *L)
         {
             r->proximo = L->Primeiro;
             L->Primeiro = r;
-            if (L->Ultimo == NULL)
-            {
-                L->Ultimo = r;
-            }
         }
         else // Inserção em qualquer outra posição
         {
