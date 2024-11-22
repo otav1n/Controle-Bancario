@@ -24,6 +24,7 @@
                 //"----------- MOVIMENTAÇÕES ------------",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/menu_movimentacoes.c",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/cadastrar_mov.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/tela_movi_padrao.c",
                 "-o",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/output/bancario"
             ],

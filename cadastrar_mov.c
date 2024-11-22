@@ -10,6 +10,11 @@
 
 void cadastro_mov(TipoLista *L){
 
-
+   int test;
+   system("cls"); // limpa tela
+   tela();
+   tela_padrao_mov();
+   gotoxy(7, 23);
+   scanf("%d", test);
     
 }

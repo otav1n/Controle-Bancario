@@ -86,4 +86,6 @@ void menu_movi(); // Tela de Menu da Movimentações
 
 void cadastro_mov(TipoLista *L); // Função para o Cadastro de Movimentações
 
+void tela_padrao_mov(); // Função que constroi a tela padrão das movimentações
+
 #endif
