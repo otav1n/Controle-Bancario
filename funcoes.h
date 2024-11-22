@@ -79,4 +79,11 @@ TipoLista L;
 
 int main(); // Programa Principal
 
+//------------ MOVIMENTAÇÕES --------------
+
+
+void menu_movi(); // Tela de Menu da Movimentações
+
+void cadastro_mov(TipoLista *L); // Função para o Cadastro de Movimentações
+
 #endif

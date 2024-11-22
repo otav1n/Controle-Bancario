@@ -38,6 +38,7 @@ int main()
                         menu_contas();
                         break;
                 case 2:
+                        menu_movi();
                         break;
                 case 3:
                         break;

@@ -21,7 +21,9 @@
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_final.c",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_inicio.c",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_posicao.c",
-                //"C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/tipoConta.c",
+                //"----------- MOVIMENTAÇÕES ------------",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/menu_movimentacoes.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/cadastrar_mov.c",
                 "-o",
                 "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/output/bancario"
             ],
