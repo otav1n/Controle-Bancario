@@ -10,6 +10,15 @@
 
 void consultar_conta(TipoLista *L)
 {
+     // Verifica se a lista está vazia
+    if (L->Primeiro == NULL) {
+        gotoxy(6, 23);
+        printf("                                             ");
+        gotoxy(7, 23);
+        printf("Lista vazia.");
+        getch();
+        return;
+    }
 
     ContaBancaria p = L->Primeiro;
 

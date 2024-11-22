@@ -1,34 +1,26 @@
-/* Autor......: Otávio Augusto
+/* Autor......: Matheus Bezerra
    Data.......: 21/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Fazer uma Função para Remover conta no Final da Lista
-   Subfunção..: Função que remove no inicio da lista
+   Objetivo...: Fazer uma função para remover conta no inicio
+   Subfunção..: Função para remover conta no inicio
 */
 
-#include "funcoes.h" // Onde está armazenada nossa estrutura de dados
+#include "funcoes.h"
 
-void remover_final(TipoLista *L)
-{
+void remover_inicio(TipoLista *L){
+
     ContaBancaria atual = L->Primeiro, anterior = NULL;  // Ponteiros para o nó atual e o anterior
     int resp;
 
-    // Verifica se a lista está vazia
-    if (atual == NULL)
-    {
+     // Verifica se a lista está vazia
+    if (L->Primeiro == NULL) {
         gotoxy(6, 23);
         printf("                                             ");
         gotoxy(7, 23);
         printf("Lista vazia.");
         getch();
         return;
-    }
-
-    // Percorre até o último nó da lista
-    while (atual->proximo != NULL)
-    {
-        anterior = atual;
-        atual = atual->proximo;
     }
 
     // Exibe as informações da conta para o usuário
@@ -66,21 +58,12 @@ void remover_final(TipoLista *L)
     printf("Deseja remover esta conta (1.Sim / 2.Nao): ");
     scanf("%d", &resp);
 
-    // Se o usuário deseja remover a conta
+     // Se o usuário deseja remover a conta
     if (resp == 1)
     {
-        // Caso a lista tenha apenas um elemento
-        if (anterior == NULL)
-        {
-            L->Primeiro = NULL;
-            L->Ultimo = NULL;
-        }
-        else
-        {
-            // Caso a lista tenha mais de um elemento
-            anterior->proximo = NULL;
-            L->Ultimo = anterior;
-        }
+        // Caso a lista tenha mais de um elemento
+        atual = L->Primeiro;
+        L->Primeiro = atual->proximo;
 
         // Libera a memória do nó removido
         free(atual);

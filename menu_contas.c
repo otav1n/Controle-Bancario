@@ -10,7 +10,7 @@
 
 void menu_contas()
 {
-    int opc;
+    int opc, pos;
     system("color 0A");
 
     system("cls"); // limpa tela
@@ -55,11 +55,18 @@ void menu_contas()
             cadastrar_Posicao(&L);
             break;
         case 4:
+            remover_inicio(&L);
             break;
         case 5:
             remover_final(&L);
             break;
         case 6:
+            gotoxy(6, 23);
+            printf(" ");
+            gotoxy(6, 23);
+            printf("Digite a posicao: ");
+            scanf("%d", &pos);
+            remover_posicao(&L, pos);
             break;
         case 7:
             break;

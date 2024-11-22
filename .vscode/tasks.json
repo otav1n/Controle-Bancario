@@ -7,21 +7,23 @@
             "command": "gcc",
             "args": [
                 "-g",
-                "C:/Users/otavi/Desktop/bc_1.0/main.c",
-                "C:/Users/otavi/Desktop/bc_1.0/tela_padrao.c",
-                "C:/Users/otavi/Desktop/bc_1.0/tela_conta.c",
-                "C:/Users/otavi/Desktop/bc_1.0/consultar_contas.c",
-                "C:/Users/otavi/Desktop/bc_1.0/Salvar_Arquivo.c",
-                "C:/Users/otavi/Desktop/bc_1.0/menu_contas.c",
-                "C:/Users/otavi/Desktop/bc_1.0/cadastrar_inicio.c",
-                "C:/Users/otavi/Desktop/bc_1.0/cadastrar_final.c",
-                "C:/Users/otavi/Desktop/bc_1.0/cadastrar_posicao.c",
-                "C:/Users/otavi/Desktop/bc_1.0/codigoExiste.c",
-                "C:/Users/otavi/Desktop/bc_1.0/carregar_Arquivos.c",
-                "C:/Users/otavi/Desktop/bc_1.0/remover_final.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/main.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/tela_padrao.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/tela_conta.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/consultar_contas.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/Salvar_Arquivo.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/menu_contas.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/cadastrar_inicio.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/cadastrar_final.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/cadastrar_posicao.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/codigoExiste.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/carregar_Arquivos.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_final.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_inicio.c",
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/remover_posicao.c",
                 //"C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/tipoConta.c",
                 "-o",
-                "C:/Users/otavi/Desktop/bc_1.0/output/bancario"
+                "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/output/bancario"
             ],
             "group": {
                 "kind": "build",
@@ -35,7 +37,7 @@
         {
             "label": "Executar Programa",
             "type": "shell",
-            "command": "C:/Users/otavi/Desktop/bc_1.0/output/bancario",
+            "command": "C:/Users/leiti/OneDrive/Documentos/Faculdade/2 Semestre/Controle Bancario/Controle-Bancario/output/bancario",
             "group": {
                 "kind": "test",
                 "isDefault": true

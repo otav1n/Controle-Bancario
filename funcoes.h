@@ -71,6 +71,9 @@ int codigoExiste(TipoLista *L, int codigo); //Função verificador do código j�
 
 void remover_final(TipoLista *L); // Função para remover conta no final da lista
 
+void remover_inicio(TipoLista *L);  // Função para remover conta no início da lista
+
+void remover_posicao(TipoLista *L, int pos);
 
 TipoLista L;
 
