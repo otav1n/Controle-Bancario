@@ -8,13 +8,15 @@
 
 #include "funcoes.h"
 
-void remover_inicio(TipoLista *L){
+void remover_inicio(TipoLista *L)
+{
 
-    ContaBancaria atual = L->Primeiro, anterior = NULL;  // Ponteiros para o nó atual e o anterior
+    ContaBancaria atual = L->Primeiro, anterior = NULL; // Ponteiros para o nó atual e o anterior
     int resp;
 
-     // Verifica se a lista está vazia
-    if (L->Primeiro == NULL) {
+    // Verifica se a lista está vazia
+    if (L->Primeiro == NULL)
+    {
         gotoxy(6, 23);
         printf("                                             ");
         gotoxy(7, 23);
@@ -27,6 +29,8 @@ void remover_inicio(TipoLista *L){
     system("cls");
     tela();
     tela_contas();
+    gotoxy(54, 03);
+    printf("REMOVENDO CONTA DO INICIO");
 
     gotoxy(32, 6);
     printf("%d", atual->conteudo.codigo);
@@ -58,7 +62,7 @@ void remover_inicio(TipoLista *L){
     printf("Deseja remover esta conta (1.Sim / 2.Nao): ");
     scanf("%d", &resp);
 
-     // Se o usuário deseja remover a conta
+    // Se o usuário deseja remover a conta
     if (resp == 1)
     {
         // Caso a lista tenha mais de um elemento
@@ -70,6 +74,8 @@ void remover_inicio(TipoLista *L){
 
         system("cls");
         tela();
+        gotoxy(54, 03);
+        printf("REMOVENDO CONTA DO INICIO");
         gotoxy(7, 23);
         printf("Conta removida com sucesso.");
         getch();

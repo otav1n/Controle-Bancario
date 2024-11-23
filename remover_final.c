@@ -10,7 +10,7 @@
 
 void remover_final(TipoLista *L)
 {
-    ContaBancaria atual = L->Primeiro, anterior = NULL;  // Ponteiros para o nó atual e o anterior
+    ContaBancaria atual = L->Primeiro, anterior = NULL; // Ponteiros para o nó atual e o anterior
     int resp;
 
     // Verifica se a lista está vazia
@@ -35,6 +35,8 @@ void remover_final(TipoLista *L)
     system("cls");
     tela();
     tela_contas();
+    gotoxy(55, 03);
+    printf("REMOVENDO CONTA DO FINAL");
 
     gotoxy(32, 6);
     printf("%d", atual->conteudo.codigo);
@@ -87,6 +89,8 @@ void remover_final(TipoLista *L)
 
         system("cls");
         tela();
+        gotoxy(55, 03);
+        printf("REMOVENDO CONTA DO FINAL");
         gotoxy(7, 23);
         printf("Conta removida com sucesso.");
         getch();
