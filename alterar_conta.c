@@ -14,14 +14,24 @@ void alterar_cadastro(TipoLista *L)
    int msg;
    int campo_alterar;
    int tipo_conta_opcao;
+   reg_conta reg_c;
 
    tela();
    tela_contas();
    gotoxy(48, 03);
    printf("ALTERAR CADASTRO DE FUNCIONARIO");
 
+   gotoxy(7, 23);
+   printf("DIGITE 0 PARA SAIR");
+
    gotoxy(31, 6);
    scanf("%d", &codigo);
+
+   // Verificação de código "0" para sair
+   if (reg_c.codigo == 0)
+   {
+      return;
+   }
 
    p = L->Primeiro;
 
@@ -72,10 +82,16 @@ void alterar_cadastro(TipoLista *L)
       gotoxy(6, 23);
       printf("                                                     ");
       gotoxy(6, 23);
-      printf("Digite a opcao desejada (1-7): ");
+      printf("Digite a opcao desejada (1-7) DIGITE 0 PARA SAIR: ");
       scanf("%d", &campo_alterar);
 
-         switch (campo_alterar)
+      // Verificação de código "0" para sair
+      if (campo_alterar == 0)
+      {
+         return;
+      }
+
+      switch (campo_alterar)
       {
       case 1:
          gotoxy(30, 8);
@@ -160,17 +176,17 @@ void alterar_cadastro(TipoLista *L)
          printf("Este campo nao pode ser alterado.");
          getch();
          break;
-         default:
-            gotoxy(6, 23);
-            printf("                                                          ");
-            gotoxy(6, 23);
-            printf("Opcao invalida. Tente novamente.");
-            getch();
-            break;
+      default:
+         gotoxy(6, 23);
+         printf("                                                          ");
+         gotoxy(6, 23);
+         printf("Opcao invalida. Tente novamente.");
+         getch();
+         break;
       }
-      
+
       gotoxy(6, 23);
-      printf("                                                         ");
+      printf("                                                                ");
       gotoxy(6, 23);
       printf("Deseja alterar outro campo? (1 - Sim, 2 - Nao): ");
       scanf("%d", &msg);

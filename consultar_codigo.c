@@ -12,6 +12,7 @@ void consultar_codigo(TipoLista *L)
     int codigo;
     ContaBancaria p;
     int resp;
+    reg_conta reg_c;
 
     do
     {
@@ -20,8 +21,17 @@ void consultar_codigo(TipoLista *L)
         gotoxy(54, 03);
         printf("CONSULTAR CONTAS CODIGO");
 
+        gotoxy(7, 23);
+        printf("DIGITE 0 PARA SAIR");
+
         gotoxy(31, 6);
         scanf("%d", &codigo);
+
+        // Verificação de código "0" para sair
+        if (reg_c.codigo == 0)
+        {
+            return;
+        }
 
         p = L->Primeiro;
 
@@ -70,7 +80,6 @@ void consultar_codigo(TipoLista *L)
         gotoxy(6, 23);
         printf("Deseja Procurar outra Conta (1.Sim / 2.Nao): ");
         scanf("%d", &resp);
-        
-    } while (resp == 1); 
 
+    } while (resp == 1);
 }
