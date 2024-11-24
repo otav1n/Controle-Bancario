@@ -79,13 +79,37 @@ void alterar_cadastro(TipoLista *L); // Função para alterar cadastro
 
 void menu_consulta(TipoLista *L); // Função menu de consulta
 
-void consultar_codigo(TipoLista *L); // Função para consultar a conta por codigo
-
 TipoLista L;
 
 int main(); // Programa Principal
 
-//------------ MOVIMENTAÇÕES --------------
+//------------ MOVIMENTAÇÕES -------------
+typedef struct // estrutura que armazena os dados de uma movimentação
+{
+    int codigo_conta; //Codigo da conta associado
+    int sequencial; //Numero sequencial da Movimentação
+    char dt_movimentacao[11]; //Data da movimentação
+    char tp_movimentacao[15]; //Tipo da Movimentação
+    char ds_favorecido[50];
+    double vl_movimentacao; // Valor Movimentacao
+    double vl_saldo; // Valor saldo
+
+}reg_movimentos; // estrutura que armazena os dados das movimentações
+
+typedef struct MoviProx *MovimentacaoConta; 
+typedef struct MoviProx
+{
+    reg_movimentos conteudo; // Dados da movimentações
+    MovimentacaoConta proximo; // Ponteiro para o próximo item da lista
+    MovimentacaoConta anterior; // Ponteiro para o anterior item da lista
+
+} MoviProx;
+
+typedef struct
+{
+    MovimentacaoConta Primeiro; // Ponteiro para o primeiro item da lista
+    MovimentacaoConta Ultimo; // Ponteiro para o Ultimo item da lista
+} MoviLista;
 
 
 void menu_movi(); // Tela de Menu da Movimentações
