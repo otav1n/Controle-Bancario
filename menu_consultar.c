@@ -22,21 +22,27 @@ void menu_consulta(TipoLista *L)
         printf("1 - Consultar por Codigo");
         gotoxy(29, 14);
         printf("2 - Consultar Geral");
+        gotoxy(29, 16);
+        printf("3 - Retornar Menu anterior");
+
         gotoxy(6, 23);
         scanf("%d", &opc);
 
         switch (opc)
         {
         case 1:
+            consultar_codigo(L);
             break;
         case 2:
-            consultar_conta(L); 
+            consultar_conta(L);
             break;
+        case 3:
+            menu_contas();
         default:
             gotoxy(6, 23);
             printf("Opcao invalida. Tente novamente.");
             getch();
             break;
         }
-    } while (opc != 2);
+    } while (opc != 3);
 }

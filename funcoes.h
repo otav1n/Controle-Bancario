@@ -79,6 +79,8 @@ void alterar_cadastro(TipoLista *L); // Função para alterar cadastro
 
 void menu_consulta(TipoLista *L); // Função menu de consulta
 
+void consultar_codigo(TipoLista *L); // Função para consultar a conta por codigo
+
 TipoLista L;
 
 int main(); // Programa Principal
