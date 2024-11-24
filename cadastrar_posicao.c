@@ -27,25 +27,24 @@ void cadastrar_Posicao(TipoLista *L)
     }
 
     // Solicita a posição para inserção
-    // Solicita a posição para inserção
     while (1)
     {
         system("cls");
-        tela(); // Atualiza a tela
+        tela(); 
         gotoxy(53, 03);
         printf("INSERINDO CONTA EM POSICAO");
+
+        gotoxy(7, 23);
+        printf("DIGITE 0 PARA SAIR");
 
         gotoxy(24, 13);
         printf("Informe a posicao para inserir:");
         scanf("%d", &pos);
 
-        // Se o usuário digitar 0
-        if (pos == 0)
+        // Verificação de código "0" para sair
+        if (pos == 0) 
         {
-            gotoxy(6, 23);
-            printf("0 nao e uma opcao, utilize os numeros naturais nao nulos.");
-            getch();  // Espera o usuário pressionar qualquer tecla para continuar
-            continue; // Continua o loop e pede novamente a posicao
+            return;
         }
 
         // Verifica o número de elementos da lista

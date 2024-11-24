@@ -10,7 +10,6 @@
 
 void cadastrar_Final(TipoLista *L)
 {
-
     reg_conta reg_c; // conteudo das contas
     ContaBancaria p;
     int resp;
@@ -24,16 +23,24 @@ void cadastrar_Final(TipoLista *L)
         gotoxy(55, 03);
         printf("INSERINDO CONTA NO FINAL");
 
-        // SCANFS PARA LEITURA DOS DADOS
+        gotoxy(7, 23);
+        printf("DIGITE 0 PARA SAIR");
 
+        // SCANFS PARA LEITURA DOS DADOS
         gotoxy(31, 6);
         scanf("%d", &reg_c.codigo);
-        getchar(); // Limpa o buffer após a leitura da resposta
+        getchar(); 
 
-        // Verificação o código já foi digitado
+        // Verificação de código "0" para sair
+        if (reg_c.codigo == 0)
+        {
+            return; 
+        }
+
+        // Verificação se o código já foi digitado
         while (codigoExiste(L, reg_c.codigo))
         {
-            gotoxy(7, 23);
+            gotoxy(6, 23);
             printf("Codigo ja existe!, Digite um novo codigo: ");
             gotoxy(31, 6);
             printf("  ");
@@ -54,6 +61,7 @@ void cadastrar_Final(TipoLista *L)
         gotoxy(31, 12);
         fflush(stdin);
         fgets(reg_c.numero_conta, 20, stdin);
+
         do
         {
             gotoxy(6, 23);
@@ -112,7 +120,7 @@ void cadastrar_Final(TipoLista *L)
         if (resp == 1) // if se quiser gravar os dados
         {
 
-            p = (ContaBancaria)malloc(sizeof(prox)); // utilizando o comando m-alloc para reserver memoria para o conteudo
+            p = (ContaBancaria)malloc(sizeof(prox)); // utilizando o comando m-alloc para reservar memória para o conteúdo
             if (p == NULL)
             {
                 gotoxy(6, 23);
@@ -143,6 +151,7 @@ void cadastrar_Final(TipoLista *L)
             printf("Cadastrado com sucesso ");
             getch();
         }
+
         gotoxy(6, 23);
         printf("                                                 ");
         gotoxy(6, 23);

@@ -26,11 +26,20 @@ void cadastrar_Inicio(TipoLista *L)
         gotoxy(54, 03);
         printf("INSERINDO CONTA NO INICIO");
 
+        gotoxy(7, 23);
+        printf("DIGITE 0 PARA SAIR");
+
         // SCANFS PARA LEITURA DOS DADOS
 
         gotoxy(31, 6);
         scanf("%d", &reg_c.codigo);
-        getchar(); // Limpa o buffer após a leitura da resposta
+        getchar(); 
+
+        // Verificação de código "0" para sair
+        if (reg_c.codigo == 0)
+        {
+            return;
+        }
 
         // Verificação o código já foi digitado
         while (codigoExiste(L, reg_c.codigo))
