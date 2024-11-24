@@ -33,5 +33,5 @@ void tela_contas()
     printf("6 - Limite..........: ");
 
     gotoxy(9, 20);
-    printf("8 - Status Conta....: ");
+    printf("7 - Status Conta....: ");
 }

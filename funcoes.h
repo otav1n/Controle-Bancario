@@ -73,7 +73,11 @@ void remover_final(TipoLista *L); // Função para remover conta no final da lis
 
 void remover_inicio(TipoLista *L);  // Função para remover conta no início da lista
 
-void remover_posicao(TipoLista *L, int pos);
+void remover_posicao(TipoLista *L, int pos); // Função para remover em posição
+
+void alterar_cadastro(TipoLista *L); // Função para alterar cadastro
+
+void menu_consulta(TipoLista *L); // Função menu de consulta
 
 TipoLista L;
 

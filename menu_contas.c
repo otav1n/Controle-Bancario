@@ -69,9 +69,10 @@ void menu_contas()
             remover_posicao(&L, pos);
             break;
         case 7:
+            alterar_cadastro(&L);
             break;
         case 8:
-            consultar_conta(&L);
+            menu_consulta(&L);
             break;
         case 9:
             break;
