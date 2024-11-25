@@ -39,10 +39,10 @@ void menu_movi()
             cadastro_mov(&L);
             break;
         case 2:
-            cadastrar_Final(&L);
+            
             break;
         case 3:
-            cadastrar_Posicao(&L);
+    
             break;
         case 4:
             break;

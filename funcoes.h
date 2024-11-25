@@ -120,4 +120,10 @@ void cadastro_mov(TipoLista *L); // Função para o Cadastro de Movimentações
 
 void tela_padrao_mov(); // Função que constroi a tela padrão das movimentações
 
+void salvar_movimentacao(MoviLista *lista_movimentacoes);
+
+MoviLista lista_movimentacoes;
+
+
+
 #endif
