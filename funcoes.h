@@ -81,6 +81,10 @@ void menu_consulta(TipoLista *L); // Função menu de consulta
 
 void consultar_codigo(TipoLista *L); // Função para consultar conta por codigo
 
+void telaTransferencia(); // Função para construir a tela de transferencia entre as contas
+
+void ListaMovimentacoes(); // Função para construir a tela de lista de movimentações bancarias
+
 TipoLista L;
 
 int main(); // Programa Principal

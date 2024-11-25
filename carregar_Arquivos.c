@@ -66,9 +66,7 @@ void carregarContas(TipoLista *L)
 
     // Mensagem de sucesso
     tela();
-    gotoxy(25, 13);
-    printf("Arquivo lido com sucesso!");
-    gotoxy(6,23);
-    printf("Pressione qualquer tecla para continuar...");
+    gotoxy(6, 23);
+    printf("Contas Bancarias Restauradas com Sucesso!");
     getch();
 }

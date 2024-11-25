@@ -28,8 +28,11 @@
         "C:/Users/otavi/Desktop/bc_1.0/menu_movimentacoes.c",
         "C:/Users/otavi/Desktop/bc_1.0/cadastrar_mov.c",
         "C:/Users/otavi/Desktop/bc_1.0/tela_movi_padrao.c",
+        "C:/Users/otavi/Desktop/bc_1.0/tela_transferencias.c",
+        "C:/Users/otavi/Desktop/bc_1.0/Tela_Lista_Movi.c",
         "-o",
         "C:/Users/otavi/Desktop/bc_1.0/output/bancario"
+        
       ],
       "group": {
         "kind": "build",

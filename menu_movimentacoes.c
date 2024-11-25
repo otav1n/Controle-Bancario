@@ -39,10 +39,10 @@ void menu_movi()
             cadastro_mov(&L);
             break;
         case 2:
-            cadastrar_Final(&L);
+            telaTransferencia();
             break;
         case 3:
-            cadastrar_Posicao(&L);
+            ListaMovimentacoes();
             break;
         case 4:
             break;
@@ -52,6 +52,6 @@ void menu_movi()
             getch();
             break;
         }
-        //salvar_Movimentacoes(&L); // Salvar movimentações no arquivo ao sair
+        // salvar_Movimentacoes(&L); // Salvar movimentações no arquivo ao sair
     } while (opc != 4);
 }

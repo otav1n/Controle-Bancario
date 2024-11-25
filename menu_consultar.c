@@ -16,13 +16,13 @@ void menu_consulta(TipoLista *L)
     do
     {
         tela();
-        gotoxy(56, 03);
+        gotoxy(32, 06);
         printf("MENU CONSULTA DE CONTAS");
-        gotoxy(29, 12);
+        gotoxy(29, 10);
         printf("1 - Consultar por Codigo");
-        gotoxy(29, 14);
+        gotoxy(29, 12);
         printf("2 - Consultar Geral");
-        gotoxy(29, 16);
+        gotoxy(29, 14);
         printf("3 - Retornar Menu anterior");
 
         gotoxy(6, 23);
