@@ -133,11 +133,13 @@ void cadastro_mov(TipoLista *L) {
 
             // Verifica se o valor da movimentação não ultrapassa o saldo + limite da conta
             if (valor_movimentacao > conta->conteudo.vl_saldo + conta->conteudo.vl_limite) {
-                gotoxy(8, 20);
+                gotoxy(7, 23);
                 printf("Valor excede saldo + limite! Por favor, digite outro valor.");
                 getch();  // Espera o usuário pressionar qualquer tecla para continuar
-                gotoxy(8, 20);
-                printf("                                                    ");
+                gotoxy(7, 23);
+                printf("                                                           ");
+                gotoxy(33, 19);
+                printf("             ");
             }
 
         } while (valor_movimentacao > conta->conteudo.vl_saldo + conta->conteudo.vl_limite); // Repete enquanto o valor for inválido
@@ -164,9 +166,11 @@ void cadastro_mov(TipoLista *L) {
         // Pergunta ao usuário se ele deseja salvar a movimentação
         do {
             gotoxy(6, 23);
-            printf("Deseja salvar a movimentacao? (1 - Sim / 2 - Nao): ");
+            printf("Deseja salvar a movimentacao? (1 - Sim / 2 - Nao):");
             gotoxy(59, 23);
             scanf("%d", &salvar_movimentacao);
+            gotoxy(6, 23);
+            printf("                                                        ");
 
             if (salvar_movimentacao == 1) {
                 // Aqui você adicionaria a lógica para salvar a movimentação
@@ -188,7 +192,7 @@ void cadastro_mov(TipoLista *L) {
         // Pergunta ao usuário se ele deseja cadastrar outra movimentação
         gotoxy(6, 23);
         printf("Deseja cadastrar outra movimentacao? (1 - Sim / 2 - Nao): ");
-        gotoxy(59, 23);
+        gotoxy(64, 23);
         scanf("%d", &resp);
         gotoxy(6, 23);
     } while (resp == 1);  // Continua perguntando se deseja cadastrar outra movimentação
