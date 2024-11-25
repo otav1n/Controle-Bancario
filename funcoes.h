@@ -85,6 +85,8 @@ void telaTransferencia(); // Função para construir a tela de transferencia ent
 
 void ListaMovimentacoes(); // Função para construir a tela de lista de movimentações bancarias
 
+void cadastro_mov(TipoLista *L); // Função de cadastro de movimentações
+
 TipoLista L;
 
 int main(); // Programa Principal
@@ -123,5 +125,11 @@ void menu_movi(); // Tela de Menu da Movimentações
 void cadastro_mov(TipoLista *L); // Função para o Cadastro de Movimentações
 
 void tela_padrao_mov(); // Função que constroi a tela padrão das movimentações
+
+void salvar_movimentacao(MoviLista *lista_movimentacoes);
+
+MoviLista lista_movimentacoes;
+
+
 
 #endif

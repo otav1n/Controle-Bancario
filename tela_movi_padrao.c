@@ -50,8 +50,8 @@ void tela_padrao_mov(){
     printf("3 - Favorecido.........: ");
 
     gotoxy(8, 19);
-    printf("4 - Valor Movimentacao..: ");
+    printf("4 - Valor Movimentacao.: ");
 
     gotoxy(8, 20);
-    printf("5 - Novo saldo..........: ");
+    printf("5 - Novo saldo.........: ");
 }
