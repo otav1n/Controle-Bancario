@@ -82,6 +82,6 @@ void menu_contas()
             getch();
             break;
         }
-        salvar_Arquivo(&L); // Salvar contas no arquivo ao sair
+        salvar_Contas(&L); // Salvar contas no arquivo ao sair
     } while (opc != 9);
 }

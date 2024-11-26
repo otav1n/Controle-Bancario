@@ -55,7 +55,7 @@ void tela_contas(); // Função sobre as Perguntas das Contas
 
 void consultar_conta(TipoLista *L); // Função para Consultar Contas Cadastradas
 
-void salvar_Arquivo(TipoLista *L); // Função para salvar as movimentações e contas no disco
+void salvar_Contas(TipoLista *L); // Função para salvar as movimentações e contas no disco
 
 void carregarContas(TipoLista *L);
 
@@ -123,11 +123,9 @@ MoviLista R;
 
 void menu_movi(); // Tela de Menu da Movimentações
 
-void cadastro_mov(TipoLista *L); // Função para o Cadastro de Movimentações
-
 void tela_padrao_mov(); // Função que constroi a tela padrão das movimentações
 
-void salvar_movimentacao(MoviLista *lista_movimentacoes);
+void salvar_Movimentacoes(MoviLista *R);
 
 MoviLista lista_movimentacoes;
 

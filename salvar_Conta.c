@@ -9,9 +9,9 @@
 #include "funcoes.h" // Onde está armazenada nossa estrutura de dados
 
 // Salvar contas no arquivo
-void salvar_Arquivo(TipoLista *L)
+void salvar_Contas(TipoLista *L)
 {
-    FILE *arq = fopen("folha.dat", "wb"); // Abre o arquivo
+    FILE *arq = fopen("folha.dat", "wb"); // Abre o arquivo para gravação binária
     if (arq == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");

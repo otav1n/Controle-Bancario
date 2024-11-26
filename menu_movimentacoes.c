@@ -52,6 +52,6 @@ void menu_movi()
             getch();
             break;
         }
-        // salvar_Movimentacoes(&L); // Salvar movimentações no arquivo ao sair
+        salvar_Movimentacoes(&R); // salvar movimentações no arquivo ao sair
     } while (opc != 4);
 }
