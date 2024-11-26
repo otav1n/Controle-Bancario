@@ -84,14 +84,8 @@ void consultar_codigo(TipoLista *L); // Função para consultar conta por codigo
 void telaTransferencia(); // Função para construir a tela de transferencia entre as contas
 
 void ListaMovimentacoes(); // Função para construir a tela de lista de movimentações bancarias
-
-void cadastro_mov(TipoLista *L); // Função de cadastro de movimentações
-
-<<<<<<< HEAD
-void transferencia_conta(TipoLista *L); // Função para transferencia entre contas bancarias
-=======
+                                            
 void ordenar_contas_banco(TipoLista *L);
->>>>>>> bbcfb47d6bf07e5eef15a72a7c6ecb4a4a0fa512
 
 TipoLista L;
 
@@ -125,6 +119,7 @@ typedef struct
     MovimentacaoConta Ultimo; // Ponteiro para o Ultimo item da lista
 } MoviLista;
 
+MoviLista R;
 
 void menu_movi(); // Tela de Menu da Movimentações
 
@@ -138,7 +133,9 @@ MoviLista lista_movimentacoes;
 
 void cadastmovi(TipoLista *L, MoviLista *R);
 
-MoviLista R;
+void transferencia_conta(TipoLista *L,  MoviLista *R); // Função para transferencia entre contas bancarias
+
+
 
 
 

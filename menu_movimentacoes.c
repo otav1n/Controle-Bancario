@@ -39,7 +39,7 @@ void menu_movi()
             cadastmovi(&L, &R);
             break;
         case 2:
-            transferencia_conta(&L);
+            transferencia_conta(&L, &R);
             break;
         case 3:
             ListaMovimentacoes();
