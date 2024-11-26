@@ -40,6 +40,4 @@ void telaTransferencia()
    gotoxy(2, 20);
    printf("Data da Transferencia...: ");
 
-
-   getch();
 }

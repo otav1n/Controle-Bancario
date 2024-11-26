@@ -24,8 +24,8 @@ void remover_final(TipoLista *L)
         return;
     }
 
-    // Percorre até o último nó da lista
-    while (atual->proximo != NULL)
+    
+    while (atual->proximo != NULL) // Percorre até o último nó da lista
     {
         anterior = atual;
         atual = atual->proximo;
@@ -68,18 +68,18 @@ void remover_final(TipoLista *L)
     printf("Deseja remover esta conta (1.Sim / 2.Nao): ");
     scanf("%d", &resp);
 
-    // Se o usuário deseja remover a conta
-    if (resp == 1)
+    
+    if (resp == 1) // Se o usuário deseja remover a conta
     {
-        // Caso a lista tenha apenas um elemento
-        if (anterior == NULL)
+        
+        if (anterior == NULL) // Caso a lista tenha apenas um elemento
         {
             L->Primeiro = NULL;
             L->Ultimo = NULL;
         }
-        else
+        else // Caso a lista tenha mais de um elemento
         {
-            // Caso a lista tenha mais de um elemento
+            
             anterior->proximo = NULL;
             L->Ultimo = anterior;
         }
