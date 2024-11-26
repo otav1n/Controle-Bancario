@@ -88,8 +88,76 @@ void cadastmovi(TipoLista *L, MoviLista *R){
         fflush(stdin);
         fgets(reg_m.dt_movimentacao, 11, stdin);
 
-        
+        do {
+        gotoxy(7, 23); 
+        printf("Escolha uma opcao (1-Credito, 2-Debito): ");
+        scanf("%d", &resp); 
 
+        if (resp == 1) {
+
+            gotoxy(33, 17);
+            printf("1-Credito         ");
+            gotoxy(33, 18);
+            strcpy(reg_m.tp_movimentacao, "Credito");
+
+        } else if (resp == 2) {
+
+            gotoxy(33, 17);
+            printf("2-Debito          ");
+            gotoxy(33, 18);
+            strcpy(reg_m.tp_movimentacao, "Debito"); 
+        } else {
+            gotoxy(6, 23);
+            printf("                                          ");
+            gotoxy(6, 23);
+            printf("Formato invalido. Tente novamente.");
+        }
+        getch();
+    } while (resp != 1 && resp != 2); 
+
+    gotoxy(33, 18);
+    fflush(stdin);
+    fgets(reg_m.ds_favorecido, 50, stdin);
+
+
+    do{
+        gotoxy(33, 19);
+        scanf("%lf", &reg_m.vl_movimentacao);
+
+        qtde =  reg_m.vl_movimentacao;
+
+        if(qtde > aux->conteudo.vl_saldo + aux->conteudo.vl_limite) {
+            gotoxy(7, 23);
+            printf("Valor excede saldo + limite! Por favor, digite outro valor.");
+            getch();  // Espera o usuário pressionar qualquer tecla para continuar
+            gotoxy(7, 23);
+            printf("                                                           ");
+            gotoxy(33, 19);
+            printf("             ");
+        }
+
+    }while (qtde > aux->conteudo.vl_saldo + aux->conteudo.vl_limite); // Repete enquanto o valor for inválido
+
+    // Processa a movimentação dependendo do tipo de movimentação (Crédito ou Débito)
+        if (resp == 1) {  // Crédito
+            aux->conteudo.vl_saldo += qtde;  // Adiciona o valor (crédito)
+            gotoxy(33, 20);
+            printf("%.2f", aux->conteudo.vl_saldo);  // Exibe o novo saldo após o crédito
+            getch(); // Espera o usuário pressionar qualquer tecla para continuar
+        } 
+        else if (resp == 2) {  // Débito
+            // Verifica se o saldo é suficiente para o débito
+            if (aux->conteudo.vl_saldo >= qtde) {
+                aux->conteudo.vl_saldo -= qtde;  // Subtrai o valor (débito)
+                gotoxy(33, 20);
+                printf("%.2f", aux->conteudo.vl_saldo);  // Exibe o novo saldo após o débito
+            } else {
+                gotoxy(7, 23);
+                printf("Saldo insuficiente para essa operacao!");
+                getch(); // Espera o usuário pressionar qualquer tecla para continuar
+            }
+        }
+   
     }while(resp != 3);
 
 }
