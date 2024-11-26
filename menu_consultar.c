@@ -23,7 +23,9 @@ void menu_consulta(TipoLista *L)
         gotoxy(29, 12);
         printf("2 - Consultar Geral");
         gotoxy(29, 14);
-        printf("3 - Retornar Menu anterior");
+        printf("3 - Ordem Alfabetica");
+        gotoxy(29, 16);
+        printf("4 - Retornar Menu anterior");
 
         gotoxy(6, 23);
         scanf("%d", &opc);
@@ -37,6 +39,9 @@ void menu_consulta(TipoLista *L)
             consultar_conta(L);
             break;
         case 3:
+            ordenar_contas_banco(L);
+            break;
+        case 4:
             menu_contas();
         default:
             gotoxy(6, 23);
@@ -44,5 +49,5 @@ void menu_consulta(TipoLista *L)
             getch();
             break;
         }
-    } while (opc != 3);
+    } while (opc != 4);
 }

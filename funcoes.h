@@ -87,6 +87,8 @@ void ListaMovimentacoes(); // Função para construir a tela de lista de movimen
 
 void cadastro_mov(TipoLista *L); // Função de cadastro de movimentações
 
+void ordenar_contas_banco(TipoLista *L);
+
 TipoLista L;
 
 int main(); // Programa Principal
