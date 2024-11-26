@@ -36,7 +36,7 @@ void menu_movi()
         switch (opc)
         {
         case 1:
-            cadastro_mov(&L);
+            cadastmovi(&L, &R);
             break;
         case 2:
             telaTransferencia();

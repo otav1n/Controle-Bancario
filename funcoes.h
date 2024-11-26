@@ -132,6 +132,10 @@ void salvar_movimentacao(MoviLista *lista_movimentacoes);
 
 MoviLista lista_movimentacoes;
 
+void cadastmovi(TipoLista *L, MoviLista *R);
+
+MoviLista R;
+
 
 
 #endif
