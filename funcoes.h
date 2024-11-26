@@ -87,7 +87,11 @@ void ListaMovimentacoes(); // Função para construir a tela de lista de movimen
 
 void cadastro_mov(TipoLista *L); // Função de cadastro de movimentações
 
+<<<<<<< HEAD
 void transferencia_conta(TipoLista *L); // Função para transferencia entre contas bancarias
+=======
+void ordenar_contas_banco(TipoLista *L);
+>>>>>>> bbcfb47d6bf07e5eef15a72a7c6ecb4a4a0fa512
 
 TipoLista L;
 
@@ -131,6 +135,10 @@ void tela_padrao_mov(); // Função que constroi a tela padrão das movimentaç�
 void salvar_movimentacao(MoviLista *lista_movimentacoes);
 
 MoviLista lista_movimentacoes;
+
+void cadastmovi(TipoLista *L, MoviLista *R);
+
+MoviLista R;
 
 
 

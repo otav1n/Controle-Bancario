@@ -6,6 +6,7 @@
       "type": "shell",
       "command": "gcc",
       "args": [
+
         "-g",
         "C:/Users/otavi/Desktop/bc_1.0/main.c",
         "C:/Users/otavi/Desktop/bc_1.0/tela_padrao.c",
@@ -24,16 +25,18 @@
         "C:/Users/otavi/Desktop/bc_1.0/alterar_conta.c",
         "C:/Users/otavi/Desktop/bc_1.0/menu_consultar.c",
         "C:/Users/otavi/Desktop/bc_1.0/consultar_codigo.c",
+
         //"----------- MOVIMENTAÇÕES ------------",
         "C:/Users/otavi/Desktop/bc_1.0/menu_movimentacoes.c",
-        "C:/Users/otavi/Desktop/bc_1.0/cadastrar_mov.c",
         "C:/Users/otavi/Desktop/bc_1.0/tela_movi_padrao.c",
-        "C:/Users/otavi/Desktop/bc_1.0/tela_transferencias.c",
-        "C:/Users/otavi/Desktop/bc_1.0/Tela_Lista_Movi.c",
         "C:/Users/otavi/Desktop/bc_1.0/transferencia_contas.c",
+        "C:/Users/otavi/Desktop/bc_1.0/Tela_Lista_Movi.c",
+        "C:/Users/otavi/Desktop/bc_1.0/ordem_alfabetica.c",
+        "C:/Users/otavi/Desktop/bc_1.0/tela_transferencias.c",
+        "C:/Users/otavi/Desktop/bc_1.0/c_m.c",
+
         "-o",
         "C:/Users/otavi/Desktop/bc_1.0/output/bancario"
-        
       ],
       "group": {
         "kind": "build",
