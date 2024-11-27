@@ -19,6 +19,7 @@ void cadastmovi(TipoLista *L, MoviLista *R){
     int resp, qtde, x, salvar_movimentacao;
     int dia, mes, ano;
     int dia_last, mes_last, ano_last;
+    int dt_fleg = 1;
 
     int codigo_conta;
 
@@ -87,49 +88,36 @@ void cadastmovi(TipoLista *L, MoviLista *R){
         printf("%.2f", aux->conteudo.vl_saldo + aux->conteudo.vl_limite);
 
         //cadastra movimentações bancarias
-        //reg_m.codigo_conta = reg_c.numero_conta;
+        reg_m.codigo_conta = reg_c.numero_conta;
 
-        while(1){
+    do{
+    gotoxy(33, 16);
+    fflush(stdin);
+    fgets(reg_m.dt_movimentacao, 50, stdin);
 
-            gotoxy(33, 16);
-            fflush(stdin);
-            fgets(reg_m.dt_movimentacao, 50, stdin);
+    // Verifica se a data está no formato DD/MM/AAAA
+    if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
+        dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
+        dt_fleg = 0;
+        break;
+    }
 
-            if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
-                dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
-                break;
-            }
+    // Limpa o espaço onde a mensagem de erro aparecerá
+    gotoxy(6, 23);
+    printf("                                          "); // Limpa a linha
+    gotoxy(6, 23);
+    printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
+    getch();
+    gotoxy(33, 16);
+    printf("             ");
+    gotoxy(6, 23);
+    printf("                                              ");
 
-            gotoxy(6, 23);
-            printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
-            gotoxy(55, 17);
-            printf("             ");
-            gotoxy(6, 23);
-            printf("                                              ");
-        }
+    
+    }while(dt_fleg == 1);
 
-        // Verificar a última movimentação para o mesmo mov_cod
-        q = R->Primeiro;
-        int valid_date = 1;
-        while (q != NULL) {
-            if (p->conteudo.codigo == reg_m.codigo_conta) {
-                sscanf(q->conteudo.dt_movimentacao, "%2d/%2d/%4d", &dia_last, &mes_last, &ano_last);
-                // Comparar a nova data com a última
-                if (ano < ano_last || (ano == ano_last && mes < mes_last) || 
-                    (ano == ano_last && mes == mes_last && dia < dia_last)) {
-                    valid_date = 0;
-                    break;
-                }
-            }
-            q = q->proximo;
-        }
-
-        if (!valid_date) {
-            gotoxy(6, 23);
-            printf("A data da movimentação não pode ser anterior à última movimentação registrada.");
-            getch();
-            return;
-        }
+    
+  
 
         do {
         gotoxy(7, 23); 
