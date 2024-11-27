@@ -1,116 +1,74 @@
 /* Autor......: Otávio Augusto
-   Data.......: 27/11/2024
+   Data.......: 24/11/2024
    Equipe.....: 159752-2023 - Otávio Augusto
                 166479-2024 - Matheus Bezerra
-   Objetivo...: Fazer as Perguntas das Contas
-   Subfunção..: Função para consultar as movimentações debito e credito
+   Objetivo...: Função para consultar movimentações bancárias por código de conta
 */
 
-#include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
+#include "funcoes.h" // Onde está armazenada nossa estrutura de dados
 
-#include "funcoes.h" // Onde está armazenado nossa estrutura de dados
-
-void consultar_movi(TipoLista *L, MoviLista *R)
+void consultar_movimentacoes(MoviLista *R)
 {
-   int codigo;
-   ContaBancaria p;
-   MovimentacaoConta mov;
-   int resp;
-   reg_conta reg_c;
-   reg_movimentos reg_m;
+    int codigo;
+    MovimentacaoConta p = R->Primeiro;
+    int resp;
 
-   do
-   {
-      system ("cls");
-      tela();
-      tela_movi();
+    do
+    {
+        system("cls");
+        tela(); // Chama a tela de interface
+        tela_movi(); // Chama a tela de movimentações
 
-      gotoxy(7, 23);
-      printf("DIGITE 0 PARA SAIR");
+        gotoxy(45, 03);
+        printf("CONSULTAR MOVIMENTACOES POR CODIGO");
 
-      gotoxy(9, 5);
-      scanf("%d", &codigo);
+        gotoxy(7, 23);
+        printf("DIGITE 0 PARA SAIR");
 
-      // Verificação de código "0" para sair
-      if (codigo == 0)
-      {
-         return;
-      }
+        gotoxy(9, 5);
+        scanf("%d", &codigo);
 
-      p = L->Primeiro;
+        // Verificação de código "0" para sair
+        if (codigo == 0)
+        {
+            return;
+        }
 
-      // percorre a lista até o código digitado
-      while (p != NULL && p->conteudo.codigo != codigo)
-      {
-         p = p->proximo;
-      }
+        int found = 0;
 
-      if (p == NULL)
-      {
-         gotoxy(6, 23);
-         printf("Esse codigo de conta nao existe.");
-         getch();
-      }
-      else
-      {
-         // Exibindo informações da conta
-         reg_c.codigo = p->conteudo.codigo;
-
-         gotoxy(12, 5);
-         printf("- %s", p->conteudo.banco);
-
-         gotoxy(31, 5);
-         printf("Agencia: %s", p->conteudo.agencia);
-
-         gotoxy(48, 5);
-         printf("Cta: %s", p->conteudo.numero_conta);
-
-         gotoxy(61, 5);
-         printf("Tp: %s", p->conteudo.tipo_conta);
-
-         // Inicia a lista de movimentações dessa conta
-         mov = R->Primeiro;                             // Inicializando as movimentações na primeira posição
-         int linha = 9;                                 // Começando na linha 9
-         mov->conteudo.vl_saldo = p->conteudo.vl_saldo; // atribundo saldo certo
-
-         while (mov != NULL)
-         {
-            if (mov->conteudo.codigo_conta == codigo) // Verifica se a movimentação corresponde a conta
+        // Percorre a lista de movimentações para o código informado
+        while (p != NULL)
+        {
+            // Verifica se o código da conta é o que estamos procurando
+            if (p->conteudo.codigo_conta == codigo)
             {
-               gotoxy(2, linha);
-               printf("%s", mov->conteudo.dt_movimentacao);
+                // Exibe a movimentação
+                gotoxy(2, 9 + found);
+                printf("%-10s %-30s %-15s %-11.2f %-11.2f",
+                       p->conteudo.dt_movimentacao,
+                       p->conteudo.ds_favorecido,
+                       p->conteudo.tp_movimentacao,
+                       p->conteudo.vl_movimentacao,
+                       p->conteudo.vl_saldo);
 
-               gotoxy(13, linha);
-               printf("%s", mov->conteudo.ds_favorecido);
-
-               gotoxy(43, linha);
-               printf("%s", mov->conteudo.tp_movimentacao);
-
-               gotoxy(57, linha);
-               printf("%.2f", mov->conteudo.vl_movimentacao);
-
-               gotoxy(69, linha);
-               printf("%.2f", mov->conteudo.vl_saldo);
-
-               linha++; // Incrementa a linha para a próxima movimentação
-
-               if (linha >= 21) // Se ultrapassar o limite da tela
-               {
-                  gotoxy(6, 23);
-                  printf("Aperte qualquer tecla para continuar...");
-                  getch();
-                  linha = 9; // Reinicia a linha após o "pause"
-               }
+                found++;
             }
-            mov = mov->proximo; // Avança para a próxima movimentação
-         }
-      }
+            p = p->proximo;
+        }
 
-      gotoxy(6, 23);
-      printf("                                                          ");
-      gotoxy(6, 23);
-      printf("Deseja Procurar outra Movimentacao (1.Sim / 2.Nao): ");
-      scanf("%d", &resp);
+        // Se não encontrar movimentações para o código informado
+        if (!found)
+        {
+            gotoxy(6, 10);
+            printf("Nao ha movimentacoes para esse codigo de conta.");
+        }
 
-   } while (resp == 1);
+        // Pergunta se o usuário deseja procurar por outro código
+        gotoxy(6, 23);
+        printf("                                                          ");
+        gotoxy(6, 23);
+        printf("Deseja Procurar movimentacoes de outro codigo(1.Sim / 2.Nao): ");
+        scanf("%d", &resp);
+
+    } while (resp == 1);
 }

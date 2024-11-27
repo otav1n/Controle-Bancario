@@ -88,7 +88,7 @@ void cadastmovi(TipoLista *L, MoviLista *R){
         printf("%.2f", aux->conteudo.vl_saldo + aux->conteudo.vl_limite);
 
         //cadastra movimentações bancarias
-        reg_m.codigo_conta = reg_c.numero_conta;
+        reg_m.codigo_conta = aux->conteudo.codigo;
     
   // Declaração da variável de controle
 int valid_date = 1;
