@@ -24,6 +24,13 @@ void remover_final(TipoLista *L)
         return;
     }
 
+    if (atual->conteudo.tem_movi == 1) { // Verifica se a conta possui movimentações
+        gotoxy(6, 23);
+        printf("Esta conta possui movimentacoes e nao pode ser removida.\n");
+        getch();
+        return;
+    }
+
     
     while (atual->proximo != NULL) // Percorre até o último nó da lista
     {

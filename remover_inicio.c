@@ -25,6 +25,13 @@ void remover_inicio(TipoLista *L)
         return;
     }
 
+    if (atual->conteudo.tem_movi == 1) { // Verifica se a conta possui movimentações
+        gotoxy(6, 23);
+        printf("Esta conta possui movimentacoes e nao pode ser removida.\n");
+        getch();
+        return;
+    }
+
     // Exibe as informações da conta para o usuário
     system("cls");
     tela();

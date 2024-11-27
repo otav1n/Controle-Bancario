@@ -11,6 +11,7 @@ void remover_posicao(TipoLista *L, int pos){
     
     ContaBancaria aux, ant;
     int x, resp;
+    reg_conta reg_c; // conteudo das contas
 
     // Verifica se a lista está vazia
     if (L->Primeiro == NULL)
@@ -22,7 +23,7 @@ void remover_posicao(TipoLista *L, int pos){
         getch();
         return;
     }
-    
+
        // Verificar se a posição é válida (se existe na lista)
     aux = L->Primeiro;
     for (x = 1; x < pos && aux != NULL; x++) {
@@ -39,7 +40,28 @@ void remover_posicao(TipoLista *L, int pos){
         getch();
         return;
     }
+    gotoxy(6, 23);
+    printf("DIGITE 0 PARA SAIR ");
+
+    // SCANFS PARA LEITURA DOS DADOS
+
+        gotoxy(33, 23);
+        scanf("%d", &reg_c.codigo);
+        getchar(); 
+
+        // Verificação de código "0" para sair
+        if (reg_c.codigo == 0)
+        {
+            return;
+        }
     
+
+    if (aux->conteudo.tem_movi == 1) { // Verifica se a conta possui movimentações
+        gotoxy(6, 23);
+        printf("Esta conta possui movimentacoes e nao pode ser removida.\n");
+        getch();
+        return;
+    }
 
     if (pos == 1) {
         remover_inicio(L); // Remover o primeiro

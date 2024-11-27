@@ -9,8 +9,9 @@
 
 #include "funcoes.h" // Onde está armazenada nossa estrutura de dados
 
-void transferencia_conta(TipoLista *L,  MoviLista *R)
+void transferencia_conta(TipoLista *L, MoviLista *R)
 {
+    int resp;
     int codigo_origem, codigo_destino;
     ContaBancaria conta_origem;
     ContaBancaria conta_destino;
@@ -70,9 +71,9 @@ void transferencia_conta(TipoLista *L,  MoviLista *R)
         gotoxy(60, 8);
         scanf("%d", &codigo_destino);
 
-        // limpa a linha MSG: se o usuario não deseja sair 
-        gotoxy (7, 23);
-        printf ("                                 ");
+        // limpa a linha MSG: se o usuario não deseja sair
+        gotoxy(7, 23);
+        printf("                                 ");
 
         // Busca a conta de destino
         conta_destino = L->Primeiro;
@@ -140,7 +141,11 @@ void transferencia_conta(TipoLista *L,  MoviLista *R)
         gotoxy(59, 16);
         printf(" %.2f", conta_destino->conteudo.vl_saldo);
 
-        getch();
+        gotoxy(6, 23);
+        printf("                                                         ");
+        gotoxy(6, 23);
+        printf("Fazer outra transferencia entre contas (1.Sim / 2.Nao): ");
+        scanf("%d", &resp);
 
-    } while (codigo_origem != 0);
+    } while (resp == 1);
 }
