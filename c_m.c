@@ -90,7 +90,7 @@ void cadastmovi(TipoLista *L, MoviLista *R){
         //cadastra movimentações bancarias
         reg_m.codigo_conta = reg_c.numero_conta;
 
-    do{
+   /*/ do{
     gotoxy(33, 16);
     fflush(stdin);
     fgets(reg_m.dt_movimentacao, 50, stdin);
@@ -114,10 +114,79 @@ void cadastmovi(TipoLista *L, MoviLista *R){
     printf("                                              ");
 
     
-    }while(dt_fleg == 1);
+    }while(dt_fleg == 1);*/
 
     
-  
+  // Declaração da variável de controle
+int valid_date = 1;
+
+do {
+    
+
+    while(dt_fleg == 1){
+    gotoxy(33, 16);
+    fflush(stdin);
+    fgets(reg_m.dt_movimentacao, 50, stdin);
+
+    // Verifica se a data está no formato DD/MM/AAAA
+    if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
+        dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
+        dt_fleg = 1;
+        break;
+    }
+
+    // Limpa o espaço onde a mensagem de erro aparecerá
+    gotoxy(6, 23);
+    printf("                                          "); // Limpa a linha
+    gotoxy(6, 23);
+    printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
+    getch();
+    gotoxy(33, 16);
+    printf("             ");
+    gotoxy(6, 23);
+    printf("                                              ");
+
+    
+    }
+
+
+    // Verifica o formato e a validade da data inserida
+    if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
+        dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
+        
+        // Agora verifica se a data inserida é posterior à última movimentação
+        q = R->Primeiro;
+        valid_date = 1;  // Assume que a data é válida até que se prove o contrário
+        
+        while (q != NULL) {
+            if (q->conteudo.codigo_conta == reg_m.codigo_conta) {
+                // Converte a última data de movimentação
+                sscanf(q->conteudo.dt_movimentacao, "%2d/%2d/%4d", &dia_last, &mes_last, &ano_last);
+
+                // Compara a nova data com a última
+                if (ano < ano_last || (ano == ano_last && mes < mes_last) || 
+                    (ano == ano_last && mes == mes_last && dia < dia_last)) {
+                    // Se a data inserida for anterior à última, torna a data inválida
+                    valid_date = 0;
+                    break;  // Não precisa verificar mais
+                }
+            }
+            q = q->proximo;  // Avança para o próximo nó
+        }
+    } else {
+        valid_date = 0;  // Data inválida por formato incorreto
+    }
+
+    // Se a data for inválida, exibe a mensagem de erro
+    if (!valid_date) {
+        gotoxy(6, 23);  // Posiciona o cursor na linha 23, coluna 6
+        printf("A data da movimentacao nao pode ser anterior a ultima movimentacao.");
+        gotoxy(33, 16);  // Retorna para o campo de data
+        printf("                      ");  // Limpa o campo de data
+        getch();  // Aguarda a tecla do usuário para permitir correção
+    }
+} while (!valid_date);  // Repete enquanto a data for inválida
+
 
         do {
         gotoxy(7, 23); 
