@@ -89,33 +89,6 @@ void cadastmovi(TipoLista *L, MoviLista *R){
 
         //cadastra movimentações bancarias
         reg_m.codigo_conta = reg_c.numero_conta;
-
-   /*/ do{
-    gotoxy(33, 16);
-    fflush(stdin);
-    fgets(reg_m.dt_movimentacao, 50, stdin);
-
-    // Verifica se a data está no formato DD/MM/AAAA
-    if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
-        dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
-        dt_fleg = 0;
-        break;
-    }
-
-    // Limpa o espaço onde a mensagem de erro aparecerá
-    gotoxy(6, 23);
-    printf("                                          "); // Limpa a linha
-    gotoxy(6, 23);
-    printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
-    getch();
-    gotoxy(33, 16);
-    printf("             ");
-    gotoxy(6, 23);
-    printf("                                              ");
-
-    
-    }while(dt_fleg == 1);*/
-
     
   // Declaração da variável de controle
 int valid_date = 1;

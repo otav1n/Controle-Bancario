@@ -138,5 +138,9 @@ char* inverte_data(char* data);
 
 void carregarMovimentacoes(MoviLista *R);
 
+void consultar_movi(TipoLista *L, MoviLista *R);
+
+void tela_movi();
+
 
 #endif
