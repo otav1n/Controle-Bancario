@@ -37,7 +37,5 @@ void telaTransferencia()
    printf("--------------------------------------+--------------------------------------");
    gotoxy(2, 19);
    printf("Valor a Ser transferido.: ");
-   gotoxy(2, 20);
-   printf("Data da Transferencia...: ");
 
 }

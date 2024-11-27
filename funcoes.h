@@ -30,6 +30,7 @@ typedef struct
     double vl_saldo;
     double vl_limite;
     char status[10];
+    int tem_movi;
 
 } reg_conta; // estrutura que armazena os dados de uma conta
 
@@ -127,14 +128,15 @@ void tela_padrao_mov(); // Função que constroi a tela padrão das movimentaç�
 
 void salvar_Movimentacoes(MoviLista *R);
 
-MoviLista lista_movimentacoes;
+//MoviLista lista_movimentacoes;
 
 void cadastmovi(TipoLista *L, MoviLista *R);
 
 void transferencia_conta(TipoLista *L,  MoviLista *R); // Função para transferencia entre contas bancarias
 
+char* inverte_data(char* data);
 
-
+void carregarMovimentacoes(MoviLista *R);
 
 
 #endif

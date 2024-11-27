@@ -140,12 +140,6 @@ void transferencia_conta(TipoLista *L,  MoviLista *R)
         gotoxy(59, 16);
         printf(" %.2f", conta_destino->conteudo.vl_saldo);
 
-        
-        // data de tranferencia
-
-        gotoxy (7, 23);
-        printf ("Data da Movimentacao (DD/MM/YYYY)");
-
         getch();
 
     } while (codigo_origem != 0);

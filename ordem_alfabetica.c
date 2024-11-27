@@ -1,3 +1,11 @@
+/* Autor......: Matheus Bezerra
+   Data.......: 26/11/2024
+   Equipe.....: 159752-2023 - Otávio Augusto
+                166479-2024 - Matheus Bezerra
+   Objetivo...: Fazer uma função para consultar em ordem alfabetica
+   Subfunção..: Função para consultar em ordem alfabetica
+*/
+
 #include "funcoes.h"
 
 // Função para ordenar as contas bancárias por ordem alfabética do banco

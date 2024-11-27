@@ -88,6 +88,13 @@ void remover_posicao(TipoLista *L, int pos){
         gotoxy(7, 23);
         printf("                                            ");
 
+        if (aux->conteudo.tem_movi == 1) { // Verifica se a conta possui movimentações
+            gotoxy(6, 23);
+            printf("Esta conta possui movimentacoes e não pode ser removida.\n");
+            getch();
+            return;
+        }
+
         if (resp == 1) {
             ant->proximo = aux->proximo;
 

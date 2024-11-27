@@ -42,7 +42,6 @@ void menu_movi()
             transferencia_conta(&L, &R);
             break;
         case 3:
-            ListaMovimentacoes();
             break;
         case 4:
             break;

@@ -12,7 +12,9 @@
 int main()
 {
         carregarContas(&L);
+        carregarMovimentacoes(&R);
         TipoLista L = {NULL, NULL};
+        MoviLista R = {NULL, NULL};
         int opc;
         system("color 0A");
         system("cls"); // limpa tela

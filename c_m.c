@@ -1,22 +1,29 @@
+/* Autor......: Matheus Bezerra
+   Data.......: 24/11/2024
+   Equipe.....: 159752-2023 - Otávio Augusto
+                166479-2024 - Matheus Bezerra
+   Objetivo...: Fazer uma função para alterar dados de uma movimentação
+   Subfunção..: Função para alterar dados de uma movimentação
+*/
+
 #include "funcoes.h"
 
 void cadastmovi(TipoLista *L, MoviLista *R){
 
-    reg_conta reg_c;
+    reg_conta reg_c; 
     reg_movimentos reg_m;
     ContaBancaria p;
     ContaBancaria aux;
     MovimentacaoConta q;
 
-    char dt_data_inv[11];
-    char dt_maior[11];
-    char dt_maior_inv[11];
-
-    int resp, qtde, x;
+    int resp, qtde, x, salvar_movimentacao;
+    int dia, mes, ano;
+    int dia_last, mes_last, ano_last;
 
     int codigo_conta;
 
     do{
+
         tela();
         tela_padrao_mov();
         if(R->Primeiro == NULL){
@@ -80,13 +87,49 @@ void cadastmovi(TipoLista *L, MoviLista *R){
         printf("%.2f", aux->conteudo.vl_saldo + aux->conteudo.vl_limite);
 
         //cadastra movimentações bancarias
-        reg_m.codigo_conta = reg_c.numero_conta;
+        //reg_m.codigo_conta = reg_c.numero_conta;
 
-        gotoxy(7, 23);
-        printf("Data da Movimentacao (DD/MM/AAAA): ");
-        gotoxy(33, 16);
-        fflush(stdin);
-        fgets(reg_m.dt_movimentacao, 11, stdin);
+        while(1){
+
+            gotoxy(33, 16);
+            fflush(stdin);
+            fgets(reg_m.dt_movimentacao, 50, stdin);
+
+            if (sscanf(reg_m.dt_movimentacao, "%2d/%2d/%4d", &dia, &mes, &ano) == 3 &&
+                dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 && ano >= 1000 && ano <= 9999) {
+                break;
+            }
+
+            gotoxy(6, 23);
+            printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
+            gotoxy(55, 17);
+            printf("             ");
+            gotoxy(6, 23);
+            printf("                                              ");
+        }
+
+        // Verificar a última movimentação para o mesmo mov_cod
+        q = R->Primeiro;
+        int valid_date = 1;
+        while (q != NULL) {
+            if (p->conteudo.codigo == reg_m.codigo_conta) {
+                sscanf(q->conteudo.dt_movimentacao, "%2d/%2d/%4d", &dia_last, &mes_last, &ano_last);
+                // Comparar a nova data com a última
+                if (ano < ano_last || (ano == ano_last && mes < mes_last) || 
+                    (ano == ano_last && mes == mes_last && dia < dia_last)) {
+                    valid_date = 0;
+                    break;
+                }
+            }
+            q = q->proximo;
+        }
+
+        if (!valid_date) {
+            gotoxy(6, 23);
+            printf("A data da movimentação não pode ser anterior à última movimentação registrada.");
+            getch();
+            return;
+        }
 
         do {
         gotoxy(7, 23); 
@@ -157,7 +200,59 @@ void cadastmovi(TipoLista *L, MoviLista *R){
                 getch(); // Espera o usuário pressionar qualquer tecla para continuar
             }
         }
-   
-    }while(resp != 3);
+
+          // Pergunta se deseja salvar a movimentação
+        do {
+            gotoxy(6, 23);
+            printf("Deseja salvar a movimentacao? (1 - Sim / 2 - Nao): ");
+            gotoxy(59, 23);
+            scanf("%d", &salvar_movimentacao);
+            gotoxy(6, 23);
+            printf("                                                        ");
+
+            if (salvar_movimentacao == 1) {
+                aux->conteudo.tem_movi = 1;
+                // Aloca memória para a nova movimentação
+                q = (MovimentacaoConta)malloc(sizeof(MoviProx));  // Correção na alocação
+                if (q == NULL) {
+                    gotoxy(6, 23);
+                    printf("Erro ao alocar memoria.");
+                    getch();
+                    return;
+                }
+
+                q->conteudo = reg_m;
+                q->anterior = R->Ultimo;
+                if (R->Ultimo != NULL) {
+                    R->Ultimo->proximo = q;
+                }
+                R->Ultimo = q;
+
+                if (R->Primeiro == NULL) {
+                    R->Primeiro = q;
+                }
+
+                gotoxy(7, 23);
+                printf("Movimentacao salva com sucesso!");
+                getch();
+            } else if (salvar_movimentacao == 2) {
+                gotoxy(7, 23);
+                printf("Movimentacao nao salva.");
+                getch();
+            } else {
+                gotoxy(6, 23);
+                printf("Opcao invalida. Tente novamente.");
+                getch();
+            }
+        } while (salvar_movimentacao != 1 && salvar_movimentacao != 2);  // Repete até uma opção válida (1 ou 2)
+
+
+         gotoxy(6, 23);
+        printf("Deseja cadastrar outra movimentacao? (1 - Sim / 2 - Nao): ");
+        gotoxy(64, 23);
+        scanf("%d", &resp);
+        gotoxy(6, 23);
+
+    }while (resp == 1);  // Repete até uma opção válida (1 ou 2)
 
 }
