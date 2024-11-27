@@ -77,6 +77,7 @@ void menu_contas()
         case 9:
             break;
         default:
+            getchar();
             gotoxy(6, 23);
             printf("Opcao invalida. Tente novamente.");
             getch();
