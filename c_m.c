@@ -110,7 +110,7 @@ do {
 
     // Limpa o espaço onde a mensagem de erro aparecerá
     gotoxy(6, 23);
-    printf("                                          "); // Limpa a linha
+    printf("                                                                 "); // Limpa a linha
     gotoxy(6, 23);
     printf("Formato ou data invalida. Use DD/MM/AAAA.    ");
     getch();
