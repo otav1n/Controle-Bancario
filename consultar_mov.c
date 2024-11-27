@@ -34,8 +34,6 @@ void consultar_movimentacoes(MoviLista *R)
             return;
         }
 
-        int found = 0;
-
         // Percorre a lista de movimentações para o código informado
         while (p != NULL)
         {
@@ -43,15 +41,13 @@ void consultar_movimentacoes(MoviLista *R)
             if (p->conteudo.codigo_conta == codigo)
             {
                 // Exibe a movimentação
-                gotoxy(2, 9 + found);
-                printf("%-10s %-30s %-15s %-11.2f %-11.2f",
+                gotoxy(2, 9);
+                printf("%s %s %s %.2f %.2f",
                        p->conteudo.dt_movimentacao,
                        p->conteudo.ds_favorecido,
                        p->conteudo.tp_movimentacao,
                        p->conteudo.vl_movimentacao,
                        p->conteudo.vl_saldo);
-
-                found++;
             }
             p = p->proximo;
         }
