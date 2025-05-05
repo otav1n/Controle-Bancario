@@ -33,6 +33,7 @@ void alterar_cadastro(TipoLista *L)
       return;
    }
 
+   
    p = L->Primeiro;
 
    // percorre a lista até o código digitado
