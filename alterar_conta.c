@@ -51,6 +51,8 @@ void alterar_cadastro(TipoLista *L)
       return;
    }
 
+
+   
    // Exibe as informações da conta para o usuário
    gotoxy(31, 6);
    printf("%d", p->conteudo.codigo);
