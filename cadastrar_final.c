@@ -9,6 +9,8 @@
 
 #include "funcoes.h" //Onde esta armazenado nossa estrutura de dados
 
+
+
 void cadastrar_Final(TipoLista *L)
 {
     reg_conta reg_c; // conteudo das contas
