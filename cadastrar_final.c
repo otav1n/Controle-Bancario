@@ -16,6 +16,8 @@ void cadastrar_Final(TipoLista *L)
     int resp;
     int tipo_conta_opcao;
 
+
+   
     do
     {
         tela();
