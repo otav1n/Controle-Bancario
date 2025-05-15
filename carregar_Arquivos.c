@@ -16,6 +16,8 @@ void carregarContas(TipoLista *L)
     FILE *ptr;
     char *arquivo = "folha.dat";
     char *modo_leitura = "rb"; // Modo de leitura binária
+
+
    
     ptr = fopen(arquivo, modo_leitura);
 
