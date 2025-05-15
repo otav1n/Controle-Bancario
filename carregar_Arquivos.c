@@ -19,9 +19,6 @@ void carregarContas(TipoLista *L)
    
     ptr = fopen(arquivo, modo_leitura);
 
-
-
-   
     // Inicializando a lista
     L->Primeiro = NULL;
     L->Ultimo = NULL;
